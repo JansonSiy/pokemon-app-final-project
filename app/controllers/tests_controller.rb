@@ -22,6 +22,7 @@ class TestsController < ApplicationController
     response = http.request(request)
     puts response.read_body
     @data = JSON.parse(response.read_body)
+    # byebug
   end
 
   # GET /tests/1 or /tests/1.json

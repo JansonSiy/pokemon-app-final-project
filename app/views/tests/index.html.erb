@@ -1,69 +1,29 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Tests</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th>Label</th>
+      <th>Type</th>
+      <th>Explanation</th>
+      <th>Classification</th>
     </tr>
   </thead>
-
   <tbody>
-    <% @tests.each do |test| %>
+    <% @data['matches'].each do |hit| %>
       <tr>
-        <td><%= test.name %></td>
-        <td><%= link_to 'Show', test %></td>
-        <td><%= link_to 'Edit', edit_test_path(test) %></td>
-        <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> <%= "#{hit['id']}" %> </td>
+        <td> <%= "#{hit['label']}" %> </td>
+        <td> <%= "#{hit['type']}" %> </td>
+        <td> <%= "#{hit['explanation']}" %> </td>
+        <td> <%= @data['matches'][0]['classification']['subs'].collect{|x| x['label']}.each do |display_classification| %>
+          <tr>
+            <td> <%= display_classification %> </td>
+          </tr>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Test', new_test_path %>
-
-<h1>test</h1>
-
-<% @data.each do |key, value| %>
-  <%= "#{key} : #{value}" %>
-  <br>
-<% end %>
-
-<hr>
-
-<%= @data['matches'][0].each do |key, value| %>
-  <%= "#{key} : #{value}" %>
-  <br>
-<% end %>
-
-<hr>
-
-<%= @data['matches'][0].keys[3] %>
-<%= @data['matches'][0]['explanation'].each do |key, value| %>
-  <%= "#{key} : #{value}" %>
-  <br>
-<% end %>
-
-<hr>
-
-<%= @data['matches'][0].values[3].keys[3] %>
-<%= @data['matches'][0].values[3].values[3].each do |key, value| %>
-  <%= "#{key} : #{value}" %>
-  <br>
-<% end %>
-
-<%= @data['matches'][0].values[3].keys[3] %>
-<%= @data['matches'][0].values[3].values[3].each do |key, value| %>
-  <%= "#{key} : #{value}" %>
-  <br>
-<% end %>
-
-<%= @data['matches'][0].keys[5] %>
-<%= @data['matches'][0].values[5].each do |key, value| %>
-  <%= "#{key} : #{value}" %>
-  <br>
-<% end %>
