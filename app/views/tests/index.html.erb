@@ -25,3 +25,45 @@
 <br>
 
 <%= link_to 'New Test', new_test_path %>
+
+<h1>test</h1>
+
+<% @data.each do |key, value| %>
+  <%= "#{key} : #{value}" %>
+  <br>
+<% end %>
+
+<hr>
+
+<%= @data['matches'][0].each do |key, value| %>
+  <%= "#{key} : #{value}" %>
+  <br>
+<% end %>
+
+<hr>
+
+<%= @data['matches'][0].keys[3] %>
+<%= @data['matches'][0]['explanation'].each do |key, value| %>
+  <%= "#{key} : #{value}" %>
+  <br>
+<% end %>
+
+<hr>
+
+<%= @data['matches'][0].values[3].keys[3] %>
+<%= @data['matches'][0].values[3].values[3].each do |key, value| %>
+  <%= "#{key} : #{value}" %>
+  <br>
+<% end %>
+
+<%= @data['matches'][0].values[3].keys[3] %>
+<%= @data['matches'][0].values[3].values[3].each do |key, value| %>
+  <%= "#{key} : #{value}" %>
+  <br>
+<% end %>
+
+<%= @data['matches'][0].keys[5] %>
+<%= @data['matches'][0].values[5].each do |key, value| %>
+  <%= "#{key} : #{value}" %>
+  <br>
+<% end %>

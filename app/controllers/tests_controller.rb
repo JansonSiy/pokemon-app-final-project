@@ -4,6 +4,24 @@ class TestsController < ApplicationController
   # GET /tests or /tests.json
   def index
     @tests = Test.all
+    
+    require 'uri'
+    require 'net/http'
+    
+    url = URI("https://api.lexigram.io/v2/extract/entities")
+    
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    
+    request = Net::HTTP::Post.new(url)
+    request["authorization"] = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdSI6Imx4ZzphcGkiLCJzYyI6WyJrZzpyZWFkIiwiZXh0cmFjdGlvbjpyZWFkIl0sImFpIjoiYXBpOmEwYjM3ZTFiLTk1ZWUtODg2YS1mMTI2LWUzY2UyZjFiM2M5OCIsInVpIjoidXNlcjo0MGFiNjMwZC1mMmY0LWQwYmMtZGYwZi0xNGZkMWQ3MjIwOGUiLCJpYXQiOjE2MzEzMzA5MDJ9.IhVjlQZH7JKufb9vbqqnuY2xzxG5Eedg4iKrqlhAB9U'
+    request["content-type"] = 'application/json'
+    request.body = "{\"text\":\"The patient has diabetes\",\"withContext\":true,\"withMatchLogic\":\"ignore-length\",\"withText\":true}"
+    
+    response = http.request(request)
+    puts response.read_body
+    @data = JSON.parse(response.read_body)
   end
 
   # GET /tests/1 or /tests/1.json
