@@ -1,29 +1,3 @@
-<h1>Tests</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Label</th>
-      <th>Type</th>
-      <th>Explanation</th>
-      <th>Classification</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @data['matches'].each do |hit| %>
-      <tr>
-        <td> <%= "#{hit['id']}" %> </td>
-        <td> <%= "#{hit['label']}" %> </td>
-        <td> <%= "#{hit['type']}" %> </td>
-        <td> <%= "#{hit['explanation']}" %> </td>
-        <td> <%= @data['matches'][0]['classification']['subs'].collect{|x| x['label']}.each do |display_classification| %>
-          <tr>
-            <td> <%= display_classification %> </td>
-          </tr>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h1>NAME: <%= @data["name"] %></h1>
+<br>
+<%= @data %>
