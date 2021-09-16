@@ -3,9 +3,11 @@ class TestsController < ApplicationController
 
   # GET /tests or /tests.json
   def index
+    @cards = Card.all
+
     require 'httparty'
 
-    response = HTTParty.get('https://pokeapi.co/api/v2/pokemon/pikachu')
+    response = HTTParty.get('https://pokeapi.co/api/v2/pokemon/charmander')
     puts response.body if response.code == 200
 
     @data = JSON.parse(response.body)
