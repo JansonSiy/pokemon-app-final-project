@@ -9,6 +9,12 @@
         = f.label :email
         br
         = f.email_field :email, autofocus: true, autocomplete: "email", class: "text-center"
+
+      .field
+        = f.label :avatar
+        br
+        = f.text_field :avatar, class: "text-center"
+
       .field
         = f.label :password
         - if @minimum_password_length
@@ -24,7 +30,7 @@
         = f.password_field :password_confirmation, autocomplete: "new-password", class: "text-center"
 
       .d-flex.justify-content-center
-        .actions.mt-4.col-6.mb-2
+        .actions.m-4.col-6
           = f.submit "Sign up"
     = render "users/shared/links"
 
