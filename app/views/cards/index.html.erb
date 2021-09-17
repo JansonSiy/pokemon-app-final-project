@@ -1,0 +1,31 @@
+<h1>Cards#index</h1>
+<p>Find me in app/views/cards/index.html.erb</p>
+
+<h1>FROM SEED</h1>
+<table>
+  <th>
+    <tr>
+      <td>ID</td>
+      <td>Pokemon</td>
+      <td>Type</td>
+      <td>Ability</td>
+      <td>HP</td>
+      <td>Attack</td>
+      <td>Image</td>
+    </tr>
+  </th>
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+        <td><%= card.user_id %></td>
+        <td><%= card.name %></td>
+        <td><%= card.pokemon_type %></td>
+        <td><%= card.ability %></td>
+        <td><%= card.hp %></td>
+        <td><%= card.attack %></td>
+        <td><img src="<%= card.img_url %>"></td>
+        <td><%= link_to 'show card', card %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
