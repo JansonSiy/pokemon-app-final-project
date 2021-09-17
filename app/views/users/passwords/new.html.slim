@@ -1,0 +1,14 @@
+.container.user_form.text-center
+  .card.pt-4.px-4 style="background-color: rgb(243, 242, 226); border-radius:10px; border-width:2px; border-style: dashed;"
+    .d-flex.justify-content
+      h3.mb-4.pt-4
+        | Forget password?
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      = render "users/shared/error_messages", resource: resource
+      .field
+        = f.label :email
+        br
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      .actions.my-3
+        = f.submit "Send me reset password instructions"
+    = render "users/shared/links"

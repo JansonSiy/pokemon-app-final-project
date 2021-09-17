@@ -1,4 +1,5 @@
 Card.destroy_all
+User.destroy_all
 
 require 'httparty'
 
@@ -46,3 +47,7 @@ Card.create(id: 2,
             hp: @charmander_hp_stat,
             attack: @charmander_attack_stat,
             img_url: @charmander_img_url)
+
+
+
+User.create(email:"user11@gmail.com", password:"user11")
