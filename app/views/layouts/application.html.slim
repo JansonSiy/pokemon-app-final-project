@@ -20,6 +20,18 @@ html
     p.alert
       = alert
 
+
+
+
+
     .container_center_main
-      .page_container.p-4
+      .page_container.px-4.py-3
+
+        .d-flex.nav-bar.justify-content-between
+          = link_to 'Pokemon App', root_path, class: "btn btn-primary text-white m-2 p-2" , style: "width: 175px;"
+          - if user_signed_in?
+            = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-primary text-white m-2 p-2", style: "width: 150px;"
+          - else
+            = link_to "Login", new_user_session_path, class: "btn btn-primary text-white m-2 p-2", style: "width: 150px;"
+
         = yield
