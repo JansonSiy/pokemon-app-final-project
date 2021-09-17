@@ -14,8 +14,43 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    width: 100%;
 }
+
+.page_container {
+    min-height: 100vh;
+    max-width: 1000px;
+    background-color: rgb(243, 242, 226) ;
+}
+
+.container_center_main {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rosybrown;
+}
+
+.user_form {
+    max-width: 300px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1.75rem;
+}
+
+
+
+
+
+
