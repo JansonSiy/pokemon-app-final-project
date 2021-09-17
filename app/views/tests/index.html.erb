@@ -1,3 +1,40 @@
+<h1>FROM SEED</h1>
+<table>
+  <th>
+    <tr>
+      <td>ID</td>
+      <td>Pokemon</td>
+      <td>Type</td>
+      <td>Ability</td>
+      <td>HP</td>
+      <td>Attack</td>
+      <td>Image</td>
+    </tr>
+  </th>
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+        <td><%= card.user_id %></td>
+        <td><%= card.name %></td>
+        <td><%= card.pokemon_type %></td>
+        <td><%= card.ability %></td>
+        <td><%= card.hp %></td>
+        <td><%= card.attack %></td>
+        <td><img src="<%= card.img_url %>"></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h1>FROM CONTROLLER</h1>
+<img src="<%= @data["sprites"]["front_default"] %>">
 <h1>NAME: <%= @data["name"] %></h1>
+<h1>POKEMON TYPE: <%= @data["types"][0]["type"]["name"] %></h1>
+<h1>ABILITY: <%= @data["abilities"][0]["ability"]["name"] %></h1>
+<h1>ABILITY_2: <%= @data["abilities"][1]["ability"]["name"] %></h1>
+<h1><%= @data["stats"][0]["stat"]["name"] %>: <%= @data["stats"][0]["base_stat"] %></h1>
+<h1><%= @data["stats"][1]["stat"]["name"] %>: <%= @data["stats"][1]["base_stat"] %></h1>   
 <br>
+
+<h1>WHOLE DATA</h1>
 <%= @data %>
