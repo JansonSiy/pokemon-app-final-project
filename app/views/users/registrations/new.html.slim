@@ -10,10 +10,10 @@
         br
         = f.email_field :email, autofocus: true, autocomplete: "email", class: "text-center"
 
-      .field
-        = f.label :avatar
-        br
-        = f.text_field :avatar, class: "text-center"
+      .field class="control-group"
+        = f.label :avatar 
+        / br
+        = f.select(:avatar, options_for_select( [ '👦 ', "👦"], ['👧 ', "👧"] ) , class: "m-4 p-4")
 
       .field
         = f.label :password
