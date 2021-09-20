@@ -10,9 +10,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    if @user.save
+      @user = User.new(user_params)
+      UserMailer.with(user: @user).welcome_email.deliver_now
+    end
+  end
 
   # GET /resource/edit
   # def edit
@@ -59,4 +63,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+  private
+  def user_params
+    params.require(:user).permit(
+      :email,
+      :password,
+      :password_confirmation,
+      :avatar
+    )
+  end
 end
