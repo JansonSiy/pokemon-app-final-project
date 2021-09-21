@@ -7,11 +7,11 @@
       .field
         = f.label :email
         br
-        = f.email_field :email, autofocus: true, autocomplete: "email", value: "user11@gmail.com", class: "text-center"
+        = f.email_field :email, autofocus: true, autocomplete: "email", value: "playerone@email.com", class: "text-center"
       .field
         = f.label :password
         br
-        = f.password_field :password, autocomplete: "current-password", value: "user11", class: "text-center"
+        = f.password_field :password, autocomplete: "current-password", value: "playerone", class: "text-center"
       - if devise_mapping.rememberable?
         .field.d-flex.justify-content-center.mt-2
           = f.check_box :remember_me , style: "width:50px;"
