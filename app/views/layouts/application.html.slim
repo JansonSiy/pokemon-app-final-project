@@ -23,11 +23,11 @@ html
       .page_container.px-1.py-3
 
         .d-flex.nav-bar.justify-content-between
-          = link_to 'Pokemon App', root_path, class: "btn btn-primary text-white my-2 py-2" , style: "width: 12rem; z-index: 99; font-size: 0.80rem;"
+          = link_to 'Pokemon App', root_path, class: "btn btn-primary text-white m-2 py-2" , style: "width: 12rem; z-index: 99; font-size: 0.80rem;"
           - if user_signed_in?
-            = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-primary text-white my-2 p-y2", style: "width: 12rem; z-index: 99; font-size: 0.80rem;"
+            = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-primary text-white m-2 py-2", style: "width: 10rem; z-index: 99; font-size: 0.80rem;"
           - else
-            = link_to "Login", new_user_session_path, class: "btn btn-primary text-white my-2 py-2", style: "width: 12rem; z-index: 99; font-size: 0.80rem"
+            = link_to "Login", new_user_session_path, class: "btn btn-primary text-white m-2 py-2", style: "width: 10rem; z-index: 99; font-size: 0.80rem"
 
         = yield
 
