@@ -53,3 +53,23 @@
     <% end %>
   </tbody>
 </table>
+
+<h1>GYM LEADER</h1>
+<table>
+  <th>
+    <tr>
+      <td>Gym Leader ID</td>
+      <td>Avatar</td>
+      <td>Name</td>
+    </tr>
+  </th>
+  <tbody>
+    <% @gym_leader.each do |gym_leader| %>
+      <tr>
+        <td><%= gym_leader.id %></td>
+        <td><img src="<%= gym_leader.avatar %>"></td>
+        <td><%= gym_leader.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
