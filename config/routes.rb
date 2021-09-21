@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # devise_for :users
+  get '/users', to: 'users#index'
   resources :cards
   root to: "home#index"
   devise_for :users, controllers: {
@@ -8,3 +8,4 @@ Rails.application.routes.draw do
 	   registrations: 'users/registrations'
   }
 end
+
