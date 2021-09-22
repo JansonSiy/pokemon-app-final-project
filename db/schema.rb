@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_17_032049) do
+ActiveRecord::Schema.define(version: 2021_09_21_142348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "battles", force: :cascade do |t|
+    t.integer "card_id"
+    t.boolean "user_attack"
+    t.boolean "gym_leader_attack"
+    t.integer "hp"
+    t.integer "damage"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "battles_gym_leaders", id: false, force: :cascade do |t|
+    t.bigint "battle_id", null: false
+    t.bigint "gym_leader_id", null: false
+  end
+
+  create_table "battles_users", id: false, force: :cascade do |t|
+    t.bigint "battle_id", null: false
+    t.bigint "user_id", null: false
+  end
 
   create_table "cards", force: :cascade do |t|
     t.integer "user_id"
@@ -23,6 +43,29 @@ ActiveRecord::Schema.define(version: 2021_09_17_032049) do
     t.integer "hp"
     t.integer "attack"
     t.string "img_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cards_gym_leaders", id: false, force: :cascade do |t|
+    t.bigint "card_id", null: false
+    t.bigint "gym_leader_id", null: false
+  end
+
+  create_table "cards_users", id: false, force: :cascade do |t|
+    t.bigint "card_id", null: false
+    t.bigint "user_id", null: false
+  end
+
+  create_table "gym_leaders", force: :cascade do |t|
+    t.string "name"
+    t.string "avatar"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
