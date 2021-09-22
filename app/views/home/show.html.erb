@@ -1,0 +1,65 @@
+<h1>Home Show</h1>
+
+<h1>PLAYER</h1>
+<table>
+    <th>
+        <tr>
+            <td>Username</td>
+            <td>Avatar</td>
+            <td>Card ID</td>
+            <td>Pokemon</td>
+            <td>P.ImgUrl</td>
+            <td>Ability</td>
+            <td>HP</td>
+            <td>Attack</td>
+        </tr>
+    </th>
+    <tbody>
+        <tr>
+          <td><%= current_user.email %></td>
+          <td><img src="<%= current_user.avatar %>"></td>
+          <td><%= current_user.cards.first.id %></td>
+          <td><%= current_user.cards.first.name %></td>
+          <td><img src="<%= current_user.cards.first.img_url %>"></td>
+          <td><%= current_user.cards.first.ability %></td>
+          <td><%= current_user.cards.first.hp %></td>
+          <td><%= current_user.cards.first.attack %></td>
+        </tr>
+    </tbody>
+</table>
+
+<%= link_to 'Attack Gym Leader', user_attack_path, method: :post %>
+
+<h1>GYM LEADER</h1>
+<table>
+    <th>
+        <tr>
+            <td>Gym Leader</td>
+            <td>Avatar</td>
+            <td>Card ID</td>
+            <td>Pokemon</td>
+            <td>P.ImgUrl</td>
+            <td>Ability</td>
+            <td>HP</td>
+            <td>Attack</td>
+        </tr>
+    </th>
+    <tbody>
+        <tr>
+          <td><%= @gym_leader.name %></td>
+          <td><img src="<%= @gym_leader.avatar %>"></td>
+          <td><%= @gym_leader.cards.first.id %></td>
+          <td><%= @gym_leader.cards.first.name %></td>
+          <td><img src="<%= @gym_leader.cards.first.img_url %>"></td>
+          <td><%= @gym_leader.cards.first.ability %></td>
+          <td><%= @gym_leader.cards.first.hp %></td>
+          <td><%= @gym_leader.cards.first.attack %></td>
+        </tr>
+    </tbody>
+</table>
+
+<%= link_to 'Attack Player', gym_leader_attack_path, method: :post %>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>

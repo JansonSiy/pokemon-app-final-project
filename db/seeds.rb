@@ -1,6 +1,7 @@
 User.destroy_all
 Card.destroy_all
 GymLeader.destroy_all
+Battle.destroy_all
 
 require 'httparty'
 
@@ -29,8 +30,10 @@ PlayerOne.cards.create(
     name: @data_pikachu["name"],
     pokemon_type: @data_pikachu["types"][0]["type"]["name"],
     ability: @data_pikachu["abilities"][0]["ability"]["name"],
-    hp: @data_pikachu["stats"][0]["base_stat"],
-    attack: @data_pikachu["stats"][1]["base_stat"],
+    # hp: @data_pikachu["stats"][0]["base_stat"],
+    hp: 10000,
+    # attack: @data_pikachu["stats"][1]["base_stat"],
+    attack: 100,
     img_url: @data_pikachu["sprites"]["front_default"]
 )
 
@@ -45,8 +48,10 @@ FirstGymLeader.cards.create(
     name: @data_charmander["name"],
     pokemon_type: @data_charmander["types"][0]["type"]["name"],
     ability: @data_charmander["abilities"][0]["ability"]["name"],
-    hp: @data_charmander["stats"][0]["base_stat"],
-    attack: @data_charmander["stats"][1]["base_stat"],
+    # hp: @data_charmander["stats"][0]["base_stat"],
+    hp: 10000,
+    # attack: @data_charmander["stats"][1]["base_stat"],
+    attack: 500,
     img_url: @data_charmander["sprites"]["front_default"]
 )
 
