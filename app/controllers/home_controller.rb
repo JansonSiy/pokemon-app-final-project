@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @users = User.all
     @gym_leader = GymLeader.all
   end
 

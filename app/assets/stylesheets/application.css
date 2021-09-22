@@ -22,10 +22,19 @@
     width: 100%;
 }
 
+.welcome {
+    font-size: 1.5rem;
+    height: 72.5vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+
 .page_container {
     min-height: 100vh;
     max-width: 1000px;
-    background-color: rgb(243, 242, 226) ;
+    /* background-color: rgb(243, 242, 226) ; */
 }
 
 .container_center_main {
@@ -41,7 +50,7 @@
 
 .user_form {
     max-width: 300px;
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,11 +58,118 @@
     line-height: 1.75rem;
 }
 
-/* .nav-bar {
-    position: relative;
-} */
+.social {
+    position: fixed;
+    bottom: 0;
+    background-color:white;
+    width: 100%;
+    height: 6rem;
+    display: grid;
+    place-items: center;
+}
+.iconlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.75rem;
+}
+.s_icon {
+    width: 4rem;
+    height: 2.85rem;
+    padding: 0 0.5rem;
+}
+.made_by {
+    font-size: 0.65rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile_container {
+    /* background-color: violet; */
+    display: grid;
+    grid-template-columns: 1fr 7rem 1fr ;
+    height: 80vh;
+    place-items: center;
+  
+}
+
+.ava_container {
+
+    display: grid;
+}
+
+.avatar {
+    width: 30vh;
+}
+
+.play {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    grid-template-rows: 2fr 1.25fr 2fr;
+    height: 100%;
+}
+
+.play_btn{
+    width: 5rem
+}
+
+.play_btn:hover {
+    zoom: 105%;
+}
+
+.d_icon {
+    width: 5rem;
+}
+
+.deck {
+    display: grid;
+    place-items: end;
+    max-width: 950px;
+    padding-right: 2.5rem;
+
+}
+
+.deck:hover {
+    zoom: 101%;
+}
+
+.winrate {
+    text-align: center;
+}
+
+.pokeball {
+    
+}
 
 
 
-
+@media only screen and (max-width: 600px) {
+    .social {
+        height: 4.75rem;
+        transition: 0.2 ease-in;
+    }
+    .iconlist {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.55rem;
+    }
+    
+    .s_icon {
+        width: 3.5rem;
+        height: 2.5rem;
+        padding: 0 0.5rem;
+    }
+    .made_by {
+        font-size: 0.55rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.4rem;
+    }
+    .avatar {
+        width: 25vh;
+    }
+    
+}
 

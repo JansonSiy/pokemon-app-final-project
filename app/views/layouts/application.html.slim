@@ -19,19 +19,16 @@ html
       = notice
     p.alert
       = alert
-
-
-
-
-
     .container_center_main
-      .page_container.px-4.py-3
+      .page_container.px-1.py-3
 
         .d-flex.nav-bar.justify-content-between
-          = link_to 'Pokemon App', root_path, class: "btn btn-primary text-white m-2 p-2" , style: "width: 175px;"
+          = link_to 'Pokemon App', root_path, class: "btn btn-primary text-white m-2 py-2" , style: "width: 12rem; z-index: 99; font-size: 0.80rem;"
           - if user_signed_in?
-            = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-primary text-white m-2 p-2", style: "width: 150px;"
+            = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-primary text-white m-2 py-2", style: "width: 10rem; z-index: 99; font-size: 0.80rem;"
           - else
-            = link_to "Login", new_user_session_path, class: "btn btn-primary text-white m-2 p-2", style: "width: 150px;"
+            = link_to "Login", new_user_session_path, class: "btn btn-primary text-white m-2 py-2", style: "width: 10rem; z-index: 99; font-size: 0.80rem"
 
         = yield
+
+    = render 'layouts/social'
