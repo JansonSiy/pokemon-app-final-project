@@ -12,10 +12,11 @@
                     | Winrate:
                     = current_user.winrate
 
-            img.play_btn src="img_avatar/play-button.png" type="button"
+                = render 'home/gym_leader'
 
             .deck
-                img.d_icon src="img_avatar/deck.png"  type="button" 
+                a href = cards_path 
+                    img.d_icon src="img_avatar/deck.png" 
 
 - else
     h4.welcome

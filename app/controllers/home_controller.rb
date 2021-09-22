@@ -33,29 +33,29 @@ class HomeController < ApplicationController
     # end
 
     # MAIN METHOD
-    # if @user.cards.first.hp < 1 && @gym_leader.cards.first.hp < 1
-    #   redirect_to root_path
-    #   flash[:notice] = "It's a tie!"
+    if @user.cards.first.hp < 1 && @gym_leader.cards.first.hp < 1
+      redirect_to root_path
+      flash[:notice] = "It's a tie!"
 
-    # elsif @gym_leader.cards.first.hp < 1
-    #   redirect_to root_path
-    #   flash[:notice] = "You won! You have defeated the gym leader!"
+    elsif @gym_leader.cards.first.hp < 1
+      redirect_to root_path
+      flash[:notice] = "You won! You have defeated the gym leader!"
 
-    # elsif @user.cards.first.hp < 1
-    #   redirect_to root_path
-    #   flash[:notice] = "You lost! You have been defeated by the gym leader!"
+    elsif @user.cards.first.hp < 1
+      redirect_to root_path
+      flash[:notice] = "You lost! You have been defeated by the gym leader!"
 
-    # elsif @user.cards.first.hp > 0
-    #   @new_hp_gym_leader = @gym_leader.cards.first.hp - @user.cards.first.attack
-    #   @gym_leader.cards.first.update(hp: @new_hp_gym_leader)
+    elsif @user.cards.first.hp > 0
+      @new_hp_gym_leader = @gym_leader.cards.first.hp - @user.cards.first.attack
+      @gym_leader.cards.first.update(hp: @new_hp_gym_leader)
 
-    #   @new_hp_player = @user.cards.first.hp - @gym_leader.cards.first.attack
-    #   @user.cards.first.update(hp: @new_hp_player)
+      @new_hp_player = @user.cards.first.hp - @gym_leader.cards.first.attack
+      @user.cards.first.update(hp: @new_hp_player)
 
-    #   flash[:notice] = "Both trainers exchanged damage!"
+      flash[:notice] = "Both trainers exchanged damage!"
 
-    #   redirect_to home_path(params[:id])
-    # end
+      redirect_to home_path(params[:id])
+    end
   end
 
   def gym_leader_attack

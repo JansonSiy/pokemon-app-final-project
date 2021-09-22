@@ -1,5 +1,3 @@
-<h1>Home</h1>
-
 <table>
     <th>
         <tr>
@@ -15,7 +13,7 @@
           <td><%= gym_leader.id %></td>
           <td><img src="<%= gym_leader.avatar %>"></td>
           <td><%= gym_leader.name %></td>
-          <td><%= link_to 'go to battle', home_path(gym_leader) %></td>
+          <td><%= link_to 'go to battle', battle_path(gym_leader) %></td>
         </tr>
       <% end %>
     </tbody>
