@@ -1,0 +1,24 @@
+- if user_signed_in?
+    .profile_container
+        .ava_container
+            = image_tag current_user.avatar, class:"avatar"
+
+
+        .play
+            .winrate    
+                h6
+                    = current_user.email.upcase
+                span
+                    | Winrate:
+                    = current_user.winrate
+
+            img.play_btn src="img_avatar/play-button.png" type="button"
+
+            .deck
+                img.d_icon src="img_avatar/deck.png"  type="button" 
+
+- else
+    h4.welcome
+        | Welcome to Pokemon App!
+
+    / .pokeball

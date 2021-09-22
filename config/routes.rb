@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/users', to: 'users#index'
   resources :cards
   root to: "home#index"
   get '/users', to: 'cards#index'
