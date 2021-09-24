@@ -115,7 +115,14 @@
     width: 5rem
 }
 
-.play_btn:hover {
+/* .play_btn:hover {
+   
+} */
+.play_icon {
+    justify-content: center;
+    display: flex;
+}
+.play_icon img:hover {
     zoom: 105%;
 }
 
@@ -140,9 +147,35 @@
 }
 
 .pokeball {
-    
+    width: 3rem;
+    padding-right: 0.25rem;
+}
+.welcome span {
+    font-size: inherit;
 }
 
+.gymleader_ava {
+    width: 100px;
+    height: 300px;
+    padding-top: 2.5rem ;
+
+}
+.gymlead_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.center_gym {
+    height: 75vh;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    box-shadow: -1px 4px 8px 0 rgba(0, 255, 13, 0.973), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    outline: 2px rgb(161, 216, 213) double;
+}
+.gymlead_page {
+    height:80vh;
+}
 
 
 @media only screen and (max-width: 600px) {
