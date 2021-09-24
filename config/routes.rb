@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  get '/users/fight', to: 'cards#index'
+  get '/challenge', to: 'cards#index'
 
   get '/users', to: 'users#index'
   get '/battle/:id', to: 'home#show', as: :battle

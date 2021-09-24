@@ -9,9 +9,9 @@
                     = current_user.email.upcase
                 span
                     | Winrate:
-                    = current_user.winrate
+                    = current_user.winrate 
             .d-flex.justify-content.center
-                a href = cards_path  style="justify-content: center; display: flex;"
+                a.play_icon href = challenge_path  
                     img.d_icon src="img_avatar/play-button.png" 
 
             a.deck href = cards_path

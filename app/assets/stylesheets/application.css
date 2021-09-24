@@ -115,7 +115,14 @@
     width: 5rem
 }
 
-.play_btn:hover {
+/* .play_btn:hover {
+   
+} */
+.play_icon {
+    justify-content: center;
+    display: flex;
+}
+.play_icon img:hover {
     zoom: 105%;
 }
 
