@@ -31,30 +31,35 @@ class HomeController < ApplicationController
       @user.cards.first.update(hp: @new_hp_player)
 
         if @user.cards.first.hp < 1 && @gym_leader.cards.first.hp < 1
-          flash[:notice] = "Wow! It's a tie! <br> You and #{@gym_leader.name} are evenly matched! <br>
+          flash[:notice] = "Wow! It's a tie! <br> 
+            #{@user.cards.first.name} and #{@gym_leader.cards.first.name} are evenly matched! <br>
             Both Pokemons fainted!"
+
           @user.cards.first.update(hp: @initial_user_hp)
           @gym_leader.cards.first.update(hp: @initial_gym_leader_hp)
+
           redirect_to home_path(params[:id])
     
         elsif @gym_leader.cards.first.hp < 1
           flash[:notice] = "You won! You have defeated #{@gym_leader.name}'s #{@gym_leader.cards.first.name}! <br>
-            HP fell to #{@gym_leader.cards.first.hp}!"
+            HP fell to #{@gym_leader.cards.first.hp} after #{@user.cards.first.name} used #{@user.cards.first.ability}!"
+          
           @user.cards.first.update(hp: @initial_user_hp)
           @gym_leader.cards.first.update(hp: @initial_gym_leader_hp)
+
           redirect_to home_path(params[:id])
     
         elsif @user.cards.first.hp < 1
           flash[:notice] = "You lost! You have been defeated by #{@gym_leader.name}'s #{@gym_leader.cards.first.name}! <br>
-            Your #{@user.cards.first.name}'s hp fell to #{@user.cards.first.hp}!"
+            Your #{@user.cards.first.name}'s hp fell to #{@user.cards.first.hp}! <br>
+            #{@gym_leader.cards.first.name}'s #{@gym_leader.cards.first.ability} is unmatched!"
+
           @user.cards.first.update(hp: @initial_user_hp)
           @gym_leader.cards.first.update(hp: @initial_gym_leader_hp)
+
           redirect_to home_path(params[:id])
         end
     end
-
-    # session[:@gym_leader_hp_duplicate] = @gym_leader.cards.first.hp
-    # session[:@gym_leader_hp_duplicate_attacked] -= @user.cards.first.attack
 
     # PLAYER to PLAYER
     # if you are updating an integer, it must be .update not .save
@@ -67,25 +72,9 @@ class HomeController < ApplicationController
     # else
     #   redirect_to home_path(params[:id])
     # end
-  end
 
-  def potion
-    @user = current_user
-    @gym_leader = GymLeader.find(params[:id])
-
-    @current_user_hp = @current_user.cards.first.hp
-    @current_gym_leader_hp = @gym_leader.cards.first.hp
-
-    def request(url)
-      response = HTTParty.get(url)
-      JSON.parse(response.body) if response.code == 200
-  end
-  request('https://pokeapi.co/api/v2/pokemon/pikachu')
-  request('https://pokeapi.co/api/v2/pokemon/charmander')
-  request('https://pokeapi.co/api/v2/pokemon/bulbasaur')
-  @data_pikachu = request('https://pokeapi.co/api/v2/pokemon/pikachu')
-
-
+    # session[:@gym_leader_hp_duplicate] = @gym_leader.cards.first.hp
+    # session[:@gym_leader_hp_duplicate_attacked] -= @user.cards.first.attack
   end
 
   def gym_leader_attack

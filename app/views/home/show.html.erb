@@ -63,7 +63,7 @@
 <% if flash[:notice] %>
   <div class="toast toast-demo fade show" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-body">
-        Battle is over! <div class="notice"><%= flash[:notice].html_safe %></div>
+        Battle is over! <br> <div class="notice"><%= flash[:notice].html_safe %></div>
         <div class="mt-2 pt-2 border-top">
             <%= link_to 'Back', root_path, class: "btn btn-primary btn-sm" %>
         </div>
