@@ -28,7 +28,7 @@
     </tbody>
 </table>
 
-<%= link_to 'Attack Gym Leader', user_attack_path, method: :post %>
+<%= link_to 'Battle!', user_attack_path, method: :post %>
 
 <h1>GYM LEADER</h1>
 <table>
@@ -58,8 +58,15 @@
     </tbody>
 </table>
 
-<%= link_to 'Attack Player', gym_leader_attack_path, method: :post %>
+<%# <%= link_to 'Attack Player', gym_leader_attack_path, method: :post %>
 
 <% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
+  <div class="toast toast-demo fade show" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body">
+        Battle is over! <div class="notice"><%= flash[:notice].html_safe %></div>
+        <div class="mt-2 pt-2 border-top">
+            <%= link_to 'Back', root_path, class: "btn btn-primary btn-sm" %>
+        </div>
+    </div>
+  </div>
 <% end %>
