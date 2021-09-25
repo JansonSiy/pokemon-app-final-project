@@ -47,6 +47,16 @@ class HomeController < ApplicationController
           @user.cards.first.update(hp: @initial_user_hp)
           @gym_leader.cards.first.update(hp: @initial_gym_leader_hp)
 
+          @user.cards.create(
+            user_id: @user.id,
+            name: @gym_leader.cards.first.name,
+            pokemon_type: @gym_leader.cards.first.pokemon_type,
+            ability: @gym_leader.cards.first.ability,
+            hp: @gym_leader.cards.first.hp,
+            attack: @gym_leader.cards.first.attack,
+            img_url: @gym_leader.cards.first.img_url
+          )
+
           redirect_to home_path(params[:id])
     
         elsif @user.cards.first.hp < 1
