@@ -110,4 +110,8 @@ class HomeController < ApplicationController
     #   redirect_to home_path(params[:id])
     # end
   end
+
+  def hello 
+  end
+
 end

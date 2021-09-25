@@ -14,7 +14,7 @@
  *= require_self
  */
 
- @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 * {
     font-family: 'Press Start 2P', cursive;
@@ -144,6 +144,26 @@
 }
 
 
+.pokemon_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 1.5rem;
+    text-align: center;
+}
+
+.pokemon_img {
+    width:25rem;
+    aspect-ratio: 3/2;
+    margin:0;
+    padding: 0;
+}
+
+.pokemon_card strong {
+    font-size: 1.25rem;
+}
+
 
 @media only screen and (max-width: 600px) {
     .social {
@@ -262,4 +282,16 @@ a:visited {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     color: white;
     border: transparent;
+.pokemon_card_container {
+    border-style: dotted;
+    width: max-content;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 0;
+}
+
+.deck_cont {
+    display: flex;
+    margin-left: -1rem;
 }
