@@ -1,0 +1,16 @@
+<div class="row row-cols-1 row-cols-md-4 g-4 rounded-3">
+    <% @cards.each do |card| %>
+    <div class="col">
+        <div class="card deckCardDesign">
+        <img src="<%= card.img_url %>" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"><%= card.name.upcase %></h5>
+            <p class="card-text">Type: <%= card.pokemon_type%></p>
+            <p class="card-text">HP: <%=card.hp%></p>
+            <p class="card-text">Ability: <%=card.ability%></p>
+            <p class="card-text">Damge: <%=card.attack%></p>
+        </div>
+        </div>
+    </div>
+    <% end %>
+</div>

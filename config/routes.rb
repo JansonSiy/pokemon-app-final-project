@@ -11,13 +11,14 @@ Rails.application.routes.draw do
   get '/deck', to: 'cards#deck'
   get '/hello', to: 'home#hello'
 
+
   get '/users', to: 'users#index'
   get '/battle/:id', to: 'home#show', as: :battle
 
   devise_for :users, controllers: {
-	   sessions: 'users/sessions',
-	   passwords: 'users/passwords',
-	   registrations: 'users/registrations'
+     sessions: 'users/sessions',
+     passwords: 'users/passwords',
+     registrations: 'users/registrations'
   }
   
 end

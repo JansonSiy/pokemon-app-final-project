@@ -3,22 +3,23 @@
         .ava_container
             = image_tag current_user.avatar, class:"avatar"
 
-
         .play
-            .winrate    
+            .winrate
                 h6
                     = current_user.email.upcase
                 span
                     | Winrate:
-                    = current_user.winrate
-
-                = render 'home/gym_leader'
+                    = current_user.winrate 
+            .d-flex.justify-content.center
+                a.play_icon href = challenge_path  
+                    img.d_icon src="img_avatar/play-button.png" 
 
             a.deck href = deck_path
                 img.d_icon src="img_avatar/deck.png" 
 
 - else
     h4.welcome
-        | Welcome to Pokemon App!
-
-    / .pokeball
+        span 
+            | Welcome to P
+            img.pokeball src="img_avatar/pokeball.svg" alt=""
+            | kemon App!

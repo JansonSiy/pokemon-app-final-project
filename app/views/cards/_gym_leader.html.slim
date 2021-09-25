@@ -1,0 +1,9 @@
+.d-flex.text-center.gymlead_page 
+  - @gym_leader.each do |gym_leader|
+    .gymlead_container  
+      .card.m-2.center_gym
+        .col 
+          .card-header
+            = gym_leader.name   
+        = image_tag gym_leader.avatar , class:"gymleader_ava" 
+        = link_to 'Challenge me!', battle_path(gym_leader) , style:"margin: 4rem 0"
