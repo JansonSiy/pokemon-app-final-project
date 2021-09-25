@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get '/deck', to: 'cards#deck'
   get '/hello', to: 'home#hello'
 
-
   get '/users', to: 'users#index'
   get '/battle/:id', to: 'home#show', as: :battle
 

@@ -115,14 +115,7 @@
     width: 5rem
 }
 
-/* .play_btn:hover {
-   
-} */
-.play_icon {
-    justify-content: center;
-    display: flex;
-}
-.play_icon img:hover {
+.play_btn:hover {
     zoom: 105%;
 }
 
@@ -147,35 +140,9 @@
 }
 
 .pokeball {
-    width: 3rem;
-    padding-right: 0.25rem;
-}
-.welcome span {
-    font-size: inherit;
+    
 }
 
-.gymleader_ava {
-    width: 100px;
-    height: 300px;
-    padding-top: 2.5rem ;
-
-}
-.gymlead_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.center_gym {
-    height: 75vh;
-    border-radius: 15px;
-    display: grid;
-    place-items: center;
-    box-shadow: -1px 4px 8px 0 rgba(0, 255, 13, 0.973), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    outline: 2px rgb(161, 216, 213) double;
-}
-.gymlead_page {
-    height:80vh;
-}
 
 .pokemon_card {
     display: flex;
@@ -226,6 +193,95 @@
     
 }
 
+/* battle page design */
+.myCard {
+    background: transparent;
+    width: 40%;
+    border: 1px solid transparent;
+}
+
+.myCardPlayerMargin {
+    margin: 30px 0px 0px 0px;
+}
+
+.myCardChallengerMargin {
+    margin: 30px 0px 0px 600px;
+}
+
+.battleLinkResultMargin {
+    position: absolute;
+    margin: 100px 0px 0px 30px;
+}
+
+.myCardImgCon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemonImg {
+    height: 30%;
+    width: 30%;
+}
+
+.trainerImg {
+    height: 10%;
+    width: 10%;
+}
+
+.myCardPlayerTitle::first-letter, .myCardPlayerGymLeader::first-letter {
+    text-transform:uppercase;
+}
+.myCardPlayerTitle, .myCardPlayerGymLeader {
+    text-align: center;
+}
+
+.myCardPlayerTitle {
+    color: #e73c7e;
+}
+
+.myCardPlayerGymLeader {
+    color: #23a6d5
+}
+
+.battleLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 3px solid #23d5ab;
+    position: absolute;
+    margin: 0px 0px 0px 460px;
+    transition: transform 1.5s;
+}
+.battleLink:hover {
+    transform: rotateZ(360deg);
+}
+
+a:link {
+    text-decoration: none;
+    color: #23d5ab
+}
+a:visited {
+    text-decoration: none;
+    color: #23d5ab
+}
+
+.backLinkButton {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    border: 1px solid white;
+}
+.backLinkButton:hover {
+    border: 1px solid #23d5ab;
+}
+
+.myFlashNotice {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    color: white;
+    border: transparent;
 .pokemon_card_container {
     border-style: dotted;
     width: max-content;
