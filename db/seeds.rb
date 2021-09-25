@@ -33,14 +33,12 @@ request('https://pokeapi.co/api/v2/pokemon/magikarp')
 @data_magikarp = request('https://pokeapi.co/api/v2/pokemon/magikarp')
 
 PlayerOne = User.create(
-    id: 1,
     email:"playerone@email.com",
     password:"playerone",
     avatar:"https://cdn2.bulbagarden.net/upload/thumb/c/cd/Ash_JN.png/150px-Ash_JN.png",
     winrate: 100
 )
 PlayerOne.cards.create(
-    id: 1,
     user_id: PlayerOne.id,
     name: @data_charizard["name"],
     pokemon_type: @data_charizard["types"][0]["type"]["name"],
@@ -50,7 +48,6 @@ PlayerOne.cards.create(
     img_url: @data_charizard["sprites"]["front_default"]
 )
 PlayerOne.cards.create(
-    id: 2,
     user_id: PlayerOne.id,
     name: @data_pikachu["name"],
     pokemon_type: @data_pikachu["types"][0]["type"]["name"],
@@ -60,7 +57,6 @@ PlayerOne.cards.create(
     img_url: @data_pikachu["sprites"]["front_default"]
 )
 PlayerOne.cards.create(
-    id: 3,
     user_id: PlayerOne.id,
     name: @data_venusaur["name"],
     pokemon_type: @data_venusaur["types"][0]["type"]["name"],
@@ -71,12 +67,10 @@ PlayerOne.cards.create(
 )
 
 FirstGymLeader = GymLeader.create(
-    id: 1,
     name:"Brock",
     avatar:"https://upload.wikimedia.org/wikipedia/en/7/71/DP-Brock.png"
 )
 FirstGymLeader.cards.create(
-    id: 4,
     user_id: FirstGymLeader.id,
     name: @data_mewtwo["name"],
     pokemon_type: @data_mewtwo["types"][0]["type"]["name"],
@@ -87,12 +81,10 @@ FirstGymLeader.cards.create(
 )
 
 SecondGymLeader = GymLeader.create(
-    id: 2,
     name:"Team Rocket",
     avatar:"https://cdn2.bulbagarden.net/upload/thumb/9/99/Team_Rocket_trio_SM.png/180px-Team_Rocket_trio_SM.png"
 )
 SecondGymLeader.cards.create(
-    id: 5,
     user_id: PlayerOne.id,
     name: @data_blastoise["name"],
     pokemon_type: @data_blastoise["types"][0]["type"]["name"],
@@ -103,12 +95,10 @@ SecondGymLeader.cards.create(
 )
 
 ThirdGymLeader = GymLeader.create(
-    id: 3,
     name:"Misty",
     avatar:"https://cdn2.bulbagarden.net/upload/thumb/f/fb/Misty_SM.png/150px-Misty_SM.png"
 )
 ThirdGymLeader.cards.create(
-    id: 6,
     user_id: SecondGymLeader.id,
     name: @data_magikarp["name"],
     pokemon_type: @data_magikarp["types"][0]["type"]["name"],

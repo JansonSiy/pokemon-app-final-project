@@ -11,6 +11,6 @@ class CardsController < ApplicationController
 
   def deck
     @user = current_user.id
-    @cards =  User.find(1).cards.all
+    @cards = current_user.cards.all
   end
 end
