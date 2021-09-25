@@ -31,8 +31,8 @@ class HomeController < ApplicationController
       @user.cards.first.update(hp: @new_hp_player)
 
         if @user.cards.first.hp < 1 && @gym_leader.cards.first.hp < 1
-          flash[:notice] = "Wow! It's a tie! <br> 
-            #{@user.cards.first.name} and #{@gym_leader.cards.first.name} are evenly matched! <br>
+          flash[:notice] = "Wow! It's a tie! <br> <br> 
+            #{@user.cards.first.name} and #{@gym_leader.cards.first.name} are evenly matched! <br> <br>
             Both Pokemons fainted!"
 
           @user.cards.first.update(hp: @initial_user_hp)
@@ -41,7 +41,7 @@ class HomeController < ApplicationController
           redirect_to home_path(params[:id])
     
         elsif @gym_leader.cards.first.hp < 1
-          flash[:notice] = "You won! You have defeated #{@gym_leader.name}'s #{@gym_leader.cards.first.name}! <br>
+          flash[:notice] = "You won! You have defeated #{@gym_leader.name}'s #{@gym_leader.cards.first.name}! <br> <br>
             HP fell to #{@gym_leader.cards.first.hp} after #{@user.cards.first.name} used #{@user.cards.first.ability}!"
           
           @user.cards.first.update(hp: @initial_user_hp)
@@ -50,8 +50,8 @@ class HomeController < ApplicationController
           redirect_to home_path(params[:id])
     
         elsif @user.cards.first.hp < 1
-          flash[:notice] = "You lost! You have been defeated by #{@gym_leader.name}'s #{@gym_leader.cards.first.name}! <br>
-            Your #{@user.cards.first.name}'s hp fell to #{@user.cards.first.hp}! <br>
+          flash[:notice] = "You lost! You have been defeated by #{@gym_leader.name}'s #{@gym_leader.cards.first.name}! <br> <br>
+            Your #{@user.cards.first.name}'s hp fell to #{@user.cards.first.hp}! <br> <br>
             #{@gym_leader.cards.first.name}'s #{@gym_leader.cards.first.ability} is unmatched!"
 
           @user.cards.first.update(hp: @initial_user_hp)
