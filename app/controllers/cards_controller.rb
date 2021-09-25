@@ -9,4 +9,9 @@ class CardsController < ApplicationController
   def show
     @card = Card.find(params[:id])
   end
+
+  def deck
+    @user = current_user.id
+    @cards =  User.find(1).cards.all
+  end
 end
