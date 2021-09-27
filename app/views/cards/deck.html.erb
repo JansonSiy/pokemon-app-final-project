@@ -1,16 +1,26 @@
-<div class="row row-cols-1 row-cols-md-4 g-4 rounded-3">
-    <% @cards.each do |card| %>
-    <div class="col">
-        <div class="card deckCardDesign">
-        <img src="<%= card.img_url %>" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title"><%= card.name.upcase %></h5>
-            <p class="card-text">Type: <%= card.pokemon_type%></p>
-            <p class="card-text">HP: <%=card.hp%></p>
-            <p class="card-text">Ability: <%=card.ability%></p>
-            <p class="card-text">Damge: <%=card.attack%></p>
+<div class="deck_cont mt-4 ">
+    <div class="row row-cols-1 row-cols-md-4 g-4 rounded-3 ms-1">
+        <% @cards.each do |card| %>
+       
+            <div class="col">
+        
+                <%= link_to select_path(card), method: :patch do %>
+                    <div class="card deckCardDesign">
+                    <img src="<%= card.img_url %>" class="card-img-top" alt="...">
+
+                    <div class="card-body py-0"  style="line-height: 0.5rem; top:-1.5rem; position: relative;" >
+                        <h5 class="card-title mb-4" style="font-size: 1rem; text-align: center;"><%= card.name.upcase %></h5>
+                        <p class="card-text" style="font-size: 0.75rem;">Type: <%= card.pokemon_type%></p>
+                        <p class="card-text" style="font-size: 0.75rem;">HP: <%=card.hp%></p>
+                        <p class="card-text" style="font-size: 0.75rem;">Ability: <%=card.ability%></p>
+                        <p class="card-text" style="font-size: 0.75rem;">Damage: <%=card.attack%></p>
+                    </div>
+
+                    </div>
+                <% end %>
+            
         </div>
-        </div>
+        <% end %>
     </div>
-    <% end %>
+
 </div>

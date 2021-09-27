@@ -1,7 +1,9 @@
 - if user_signed_in?
     .profile_container
-        .ava_container
-            = image_tag current_user.avatar, class:"avatar"
+        .d-flex 
+            .ava_container
+                = image_tag current_user.avatar, class:"avatar"
+                img.selected src="#{current_user.cards.order(updated_at: :asc).last.img_url}"
 
         .play
             .winrate

@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     @gym_leader = GymLeader.all
   end
 
-  def show
+  def battle
     @gym_leader = GymLeader.find(params[:id])
   end
 
@@ -38,7 +38,7 @@ class HomeController < ApplicationController
           @user.cards.first.update(hp: @initial_user_hp)
           @gym_leader.cards.first.update(hp: @initial_gym_leader_hp)
 
-          redirect_to home_path(params[:id])
+          redirect_to battle_path(params[:id])
     
         elsif @gym_leader.cards.first.hp < 1
           flash[:notice] = "You won! You have defeated #{@gym_leader.name}'s #{@gym_leader.cards.first.name}! <br> <br>
@@ -57,7 +57,7 @@ class HomeController < ApplicationController
             img_url: @gym_leader.cards.first.img_url
           )
 
-          redirect_to home_path(params[:id])
+          redirect_to battle_path(params[:id])
     
         elsif @user.cards.first.hp < 1
           flash[:notice] = "You lost! You have been defeated by #{@gym_leader.name}'s #{@gym_leader.cards.first.name}! <br> <br>
@@ -67,48 +67,12 @@ class HomeController < ApplicationController
           @user.cards.first.update(hp: @initial_user_hp)
           @gym_leader.cards.first.update(hp: @initial_gym_leader_hp)
 
-          redirect_to home_path(params[:id])
+          redirect_to battle_path(params[:id])
         end
     end
-
-    # PLAYER to PLAYER
-    # if you are updating an integer, it must be .update not .save
-    # @new_hp_gym_leader = @gym_leader.cards.first.hp - @user.cards.first.attack
-    # @gym_leader.cards.first.update(hp: @new_hp_gym_leader)
-    
-    # if @gym_leader.cards.first.hp < 0
-    #   redirect_to root_path
-    #   flash[:notice] = "You won! You have defeated the Gym Leader"
-    # else
-    #   redirect_to home_path(params[:id])
-    # end
-
-    # session[:@gym_leader_hp_duplicate] = @gym_leader.cards.first.hp
-    # session[:@gym_leader_hp_duplicate_attacked] -= @user.cards.first.attack
   end
 
   def gym_leader_attack
-    # PLAYER to PLAYER
-    # @gym_leader = GymLeader.find(params[:id])
-    # @user = current_user
-
-    # Battle.create(
-    #   card_id: @gym_leader.cards.first.id,
-    #   user_attack: false,
-    #   gym_leader_attack: true,
-    #   hp: @user.cards.first.hp,
-    #   damage: @gym_leader.cards.first.attack
-    # )
-
-    # @new_hp_player = @user.cards.first.hp - @gym_leader.cards.first.attack
-    # @user.cards.first.update(hp: @new_hp_player)
-
-    # if @user.cards.first.hp < 0
-    #   redirect_to root_path
-    #   flash[:notice] = "You lost! You have been defeated by the Gym Leader"
-    # else
-    #   redirect_to home_path(params[:id])
-    # end
   end
 
   def hello 
