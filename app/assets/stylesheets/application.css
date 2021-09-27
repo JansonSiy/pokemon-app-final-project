@@ -33,9 +33,8 @@
  }
  
  .page_container {
-     min-height: 100vh;
+     height: 100%;
      max-width: 1000px;
-     /* background-color: rgb(243, 242, 226) ; */
  }
  
  .container_center_main {
@@ -119,7 +118,7 @@
  }
  
  .play_btn{
-     width: 5rem
+     width: 5rem;
  }
  
  /* .play_btn:hover {
@@ -215,7 +214,7 @@
  }
  
  .page_container {
-     min-height: 100vh;
+     height: max-content;
      max-width: 1000px;
      /* background-color: rgb(243, 242, 226) ; */
  }
@@ -517,6 +516,10 @@
  .deckCardDesign {
     background-color: transparent;
     box-shadow: -1px 4px 8px 0 rgba(238, 255, 0, 0.973), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0rem;
+ }
+ .deckCardDesign img {
+    height: 13rem;
  }
 
  .deck_cont {
