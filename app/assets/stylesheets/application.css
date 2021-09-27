@@ -15,6 +15,7 @@
  */
 
  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
  * {
      font-family: 'Press Start 2P', cursive;
@@ -100,7 +101,13 @@
  }
  
  .avatar {
-     width: 30vh;
+     width: 50vh;
+ }
+
+ .selected {
+    height:50%;
+    position: relative;
+    bottom: -17.5rem;
  }
  
  .play {
@@ -196,6 +203,179 @@
  .pokemon_card strong {
      font-size: 1.25rem;
  }
+
+
+ .welcome {
+     font-size: 1.5rem;
+     height: 72.5vh;
+     display: grid;
+     place-items: center;
+     text-align: center;
+     padding: 1rem;
+ }
+ 
+ .page_container {
+     min-height: 100vh;
+     max-width: 1000px;
+     /* background-color: rgb(243, 242, 226) ; */
+ }
+ 
+ .container_center_main {
+     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+     position: fixed;
+     top: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     background-color: rosybrown;
+ }
+ 
+ .user_form {
+     max-width: 300px;
+     min-height: 80vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     line-height: 1.75rem;
+ }
+ 
+ .social {
+     position: fixed;
+     bottom: 0;
+     background-color:white;
+     width: 100%;
+     height: 6rem;
+     display: grid;
+     place-items: center;
+ }
+ .iconlist {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-top: 0.75rem;
+ }
+ .s_icon {
+     width: 4rem;
+     height: 2.85rem;
+     padding: 0 0.5rem;
+ }
+ .made_by {
+     font-size: 0.65rem;
+     text-align: center;
+     margin-bottom: 0.75rem;
+     margin-bottom: 0.5rem;
+ }
+ 
+ .profile_container {
+     /* background-color: violet; */
+     display: grid;
+     grid-template-columns: 1fr 7rem 1fr ;
+     height: 80vh;
+     place-items: center;
+   
+ }
+ 
+ .ava_container {
+     display: flex;
+ }
+ 
+
+ .play {
+     display: grid;
+     place-items: center;
+     position: absolute;
+     grid-template-rows: 2fr 1.25fr 2fr;
+     height: 100%;
+ }
+ 
+ .play_btn{
+     width: 5rem
+ }
+ 
+ /* .play_btn:hover {
+    
+ } */
+ .play_icon {
+     justify-content: center;
+     display: flex;
+ }
+ .play_icon img:hover {
+     zoom: 105%;
+ }
+ 
+ .d_icon {
+     width: 5rem;
+ }
+ 
+ .deck {
+     display: grid;
+     place-items: end;
+     max-width: 950px;
+     padding-right: 2.5rem;
+ 
+ }
+ 
+ .deck:hover {
+     zoom: 101%;
+ }
+ 
+ .winrate {
+     text-align: center;
+ }
+ 
+ .pokeball {
+     width: 3rem;
+     padding-right: 0.25rem;
+ }
+ .welcome span {
+     font-size: inherit;
+ }
+ 
+ .gymleader_ava {
+     width: 100px;
+     height: 300px;
+     padding-top: 2.5rem ;
+ 
+ }
+ .gymlead_container {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ .center_gym {
+     height: 75vh;
+     border-radius: 15px;
+     display: grid;
+     place-items: center;
+     box-shadow: -1px 4px 8px 0 rgba(0, 255, 13, 0.973), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     background: #ffffff8f;
+ }
+ .gymlead_page {
+     height:80vh;
+ }
+ 
+ .pokemon_card {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     line-height: 1.5rem;
+     text-align: center;
+ }
+ 
+ .pokemon_img {
+     width:25rem;
+     aspect-ratio: 3/2;
+     margin:0;
+     padding: 0;
+ }
+ 
+ .pokemon_card strong {
+     font-size: 1.25rem;
+ }
+
  
  
  @media only screen and (max-width: 600px) {
@@ -235,10 +415,7 @@
      padding: 5rem 0;
  }
  
- .deck_cont {
-     display: flex;
-     margin-left: -1rem;
- }
+
  
  /* battle page design */
  .myCard {
@@ -312,6 +489,12 @@
      text-decoration: none;
      color: #23d5ab
  }
+
+ a:hover {
+    text-decoration: none;
+    color: #ca49b5
+}
+
  a:visited {
      text-decoration: none;
      color: #23d5ab
@@ -335,3 +518,150 @@
     background-color: transparent;
     box-shadow: -1px 4px 8px 0 rgba(238, 255, 0, 0.973), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  }
+
+ .deck_cont {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+ }
+
+ .pokemon_card_container {
+    border-style: dotted;
+    width: max-content;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 0;
+}
+
+.deck_cont {
+    display: flex;
+    margin-left: -1rem;
+}
+
+/* battle page design */
+.myCard {
+    background: transparent;
+    width: 40%;
+    border: 1px solid transparent;
+}
+
+.myCardPlayerMargin {
+    margin: 30px 0px 0px 0px;
+}
+
+.myCardChallengerMargin {
+    margin: 30px 0px 0px 600px;
+}
+
+.battleLinkResultMargin {
+    position: absolute;
+    margin: 100px 0px 0px 30px;
+}
+
+.myCardImgCon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemonImg {
+    height: 30%;
+    width: 30%;
+}
+
+.trainerImg {
+    height: 10%;
+    width: 10%;
+}
+
+.myCardPlayerTitle::first-letter, .myCardPlayerGymLeader::first-letter {
+    text-transform:uppercase;
+}
+.myCardPlayerTitle, .myCardPlayerGymLeader {
+    text-align: center;
+}
+
+.myCardPlayerTitle {
+    color: #e73c7e;
+}
+
+.myCardPlayerGymLeader {
+    color: #23a6d5
+}
+
+.battleLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 3px solid #23d5ab;
+    position: absolute;
+    margin: 0px 0px 0px 460px;
+    transition: transform 1s;
+}
+.battleLink:hover {
+    transform: rotateZ(360deg);
+}
+
+a:link {
+    text-decoration: none;
+    color: #23d5ab
+}
+a:visited {
+    text-decoration: none;
+    color: #23d5ab
+}
+
+.backLinkButton {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    border: 1px solid white;
+}
+.backLinkButton:hover {
+    border: 1px solid #23d5ab;
+}
+
+.myFlashNotice {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    color: white;
+    border: transparent;
+}
+
+.deckCardDesign {
+background-color: transparent;
+box-shadow: -1px 4px 8px 0 rgba(238, 255, 0, 0.973), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ 
+ 
+@media only screen and (max-width: 600px) {
+    .social {
+        height: 4.75rem;
+        transition: 0.2 ease-in;
+    }
+    .iconlist {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.55rem;
+    }
+    
+    .s_icon {
+        width: 3.5rem;
+        height: 2.5rem;
+        padding: 0 0.5rem;
+    }
+    .made_by {
+        font-size: 0.55rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.4rem;
+    }
+    .avatar {
+        width: 25vh;
+    }
+     
+}
+
