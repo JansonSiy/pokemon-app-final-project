@@ -192,7 +192,7 @@
     border-radius: 15px;
     display: grid;
     place-items: center;
-    box-shadow: 5px 9px 13px 0px rgb(218 255 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 5px 9px 13px 0px rgb(218, 255, 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background: #ffffff24;
 }
 
@@ -274,7 +274,7 @@
     border: 1px solid transparent;
     border-radius: 20px;
     padding: 5px;
-    box-shadow: 5px 9px 13px 0px rgb(218 255 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 5px 9px 13px 0px rgb(218, 255, 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .nurseJoyImg {
@@ -306,7 +306,7 @@
     border: 1px solid transparent;
     border-radius: 20px;
     padding: 10px;
-    box-shadow: 5px 9px 13px 0px rgb(218 255 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 5px 9px 13px 0px rgb(218, 255, 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
 }
  
@@ -366,7 +366,7 @@
     border-radius: 50%;
     border: 3px solid gold;
     transition: transform 1s;
-    box-shadow: 5px 9px 13px 0px rgb(218 255 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 5px 9px 13px 0px rgb(218, 255, 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
     left: 455px;
     bottom: 80px;
@@ -402,5 +402,5 @@ a:visited {
     background: #ffffff24;
     color: gold;
     border: transparent;
-    box-shadow: 5px 9px 13px 0px rgb(218 255 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    box-shadow: 5px 9px 13px 0px rgb(218, 255, 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }

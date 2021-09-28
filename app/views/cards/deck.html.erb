@@ -1,6 +1,6 @@
 <h3 class="deckTitle">P<img alt="" class="pokeball" src="img_avatar/pokeball.svg" />kemon Card Collection!</h3>
 
-<div class="row row-cols-1 row-cols-md-4 g-4 rounded-3 ms-1">
+<div class="row row-cols-1 row-cols-md-4 g-4 rounded-3 ms-1" style="min-height: 100vh;">
     <% @cards.each do |card| %>
         <div class="col">
             <%= link_to select_path(card), method: :patch do %>
