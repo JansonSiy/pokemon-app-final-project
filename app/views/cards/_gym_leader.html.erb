@@ -1,0 +1,13 @@
+<div class="d-flex text-center gymlead_page">
+    <% @gym_leader.each do |gym_leader| %>
+        <div class="gymlead_container">
+            <div class="card m-2 center_gym">
+                <div class="col">
+                    <div class="card-header gymLeaderHeader"><%= gym_leader.name %></div>
+                </div>
+                <%= image_tag gym_leader.avatar , class:"gymleader_ava" %>
+                <%= link_to 'CHALLENGE GYM LEADER!', battle_path(gym_leader) , style:"margin: 4rem 0" %>
+            </div>
+        </div>
+    <% end %>
+</div>

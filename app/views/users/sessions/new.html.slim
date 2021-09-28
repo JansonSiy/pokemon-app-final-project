@@ -1,23 +1,23 @@
-.container.user_form.text-center style="line-height: 2.25rem;"
-  .card.pt-4.px-4 style="background-color: transparent; border-radius:10px; border-width:2px; border-style: dashed;"
+.container.user_form.text-center style="line-height: 2.25rem"
+  .card.pt-4.px-4 style="background-color: transparent; border-radius:10px; border-width:2px; border-style: dashed; border: 2px dotted gold;"
     .d-flex.justify-content
-      h2.mb-4.pt-4
+      h2.mb-4.pt-4 style="color: gold;"
         | Log in
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .field
-        = f.label :email
+        = f.label :email, style: "color: gold;"
         br
-        = f.email_field :email, autofocus: true, autocomplete: "email", value: "playerone@email.com", class: "text-center"
+        = f.email_field :email, autofocus: true, autocomplete: "email", value: "playerone@email.com", class: "text-center", style: "background-color: white; border: 3px solid gold; color: gold; border-radius: 15px;"
       .field
-        = f.label :password
+        = f.label :password, style: "color: gold;"
         br
-        = f.password_field :password, autocomplete: "current-password", value: "playerone", class: "text-center"
+        = f.password_field :password, autocomplete: "current-password", value: "playerone", class: "text-center", style: "background-color: white; border: 3px solid gold; color: gold; border-radius: 15px;"
       - if devise_mapping.rememberable?
         .field.d-flex.justify-content-center.mt-2
           = f.check_box :remember_me , style: "width:50px;"
-        = f.label :remember_me, style: "width:max-content;"
+        = f.label :remember_me, style: "width:max-content; color: gold;"
       / .actions.mb-2.col-6
       .d-flex.justify-content-center
         .actions.mt-2.mb-3.col-6
-          = f.submit "Log in"
+          = f.submit "Log in", style: "background-color: #ffffff24;; border: 3px solid gold; color: gold; border-radius: 15px;"
     = render "users/shared/links"

@@ -1,645 +1,5 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
- @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
- @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
- * {
-     font-family: 'Press Start 2P', cursive;
-     font-size: 0.8rem;
-     width: 100%;
- }
-
- .welcome {
-     font-size: 1.5rem;
-     height: 72.5vh;
-     display: grid;
-     place-items: center;
-     text-align: center;
-     padding: 1rem;
- }
- 
- .page_container {
-     height: 100%;
-     max-width: 1000px;
- }
- 
- .container_center_main {
-     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-     position: fixed;
-     top: 0;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
-     background-color: rosybrown;
- }
- 
- .user_form {
-     max-width: 300px;
-     min-height: 80vh;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
-     line-height: 1.75rem;
- }
- 
- .social {
-     position: fixed;
-     bottom: 0;
-     background-color:white;
-     width: 100%;
-     height: 6rem;
-     display: grid;
-     place-items: center;
- }
- .iconlist {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     margin-top: 0.75rem;
- }
- .s_icon {
-     width: 4rem;
-     height: 2.85rem;
-     padding: 0 0.5rem;
- }
- .made_by {
-     font-size: 0.65rem;
-     text-align: center;
-     margin-bottom: 0.75rem;
-     margin-bottom: 0.5rem;
- }
- 
- .profile_container {
-     /* background-color: violet; */
-     display: grid;
-     grid-template-columns: 1fr 7rem 1fr ;
-     height: 80vh;
-     place-items: center;
-   
- }
- 
- .ava_container {
- 
-     display: grid;
- }
- 
- .avatar {
-     width: 50vh;
- }
-
- .selected {
-    height:50%;
-    position: relative;
-    bottom: -17.5rem;
- }
- 
- .play {
-     display: grid;
-     place-items: center;
-     position: absolute;
-     grid-template-rows: 2fr 1.25fr 2fr;
-     height: 100%;
- }
- 
- .play_btn{
-     width: 5rem;
- }
- 
- /* .play_btn:hover {
-    
- } */
- .play_icon {
-     justify-content: center;
-     display: flex;
- }
- .play_icon img:hover {
-     zoom: 105%;
- }
- 
- .d_icon {
-     width: 5rem;
- }
- 
- .deck {
-     display: grid;
-     place-items: end;
-     max-width: 950px;
-     padding-right: 2.5rem;
- 
- }
- 
- .deck:hover {
-     zoom: 101%;
- }
- 
- .winrate {
-     text-align: center;
- }
- 
- .pokeball {
-     width: 3rem;
-     padding-right: 0.25rem;
- }
- .welcome span {
-     font-size: inherit;
- }
- 
- .gymleader_ava {
-     width: 100px;
-     height: 300px;
-     padding-top: 2.5rem ;
- 
- }
- .gymlead_container {
-     display: flex;
-     align-items: center;
-     justify-content: center;
- }
- .center_gym {
-     height: 75vh;
-     border-radius: 15px;
-     display: grid;
-     place-items: center;
-     box-shadow: -1px 4px 8px 0 rgba(0, 255, 13, 0.973), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-     background: #ffffff8f;
- }
- .gymlead_page {
-     height:80vh;
- }
- 
- .pokemon_card {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     flex-direction: column;
-     line-height: 1.5rem;
-     text-align: center;
- }
- 
- .pokemon_img {
-     width:25rem;
-     aspect-ratio: 3/2;
-     margin:0;
-     padding: 0;
- }
- 
- .pokemon_card strong {
-     font-size: 1.25rem;
- }
-
-
- .welcome {
-     font-size: 1.5rem;
-     height: 72.5vh;
-     display: grid;
-     place-items: center;
-     text-align: center;
-     padding: 1rem;
- }
- 
- .page_container {
-     height: max-content;
-     max-width: 1000px;
-     /* background-color: rgb(243, 242, 226) ; */
- }
- 
- .container_center_main {
-     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-     position: fixed;
-     top: 0;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
-     background-color: rosybrown;
- }
- 
- .user_form {
-     max-width: 300px;
-     min-height: 80vh;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
-     line-height: 1.75rem;
- }
- 
- .social {
-     position: fixed;
-     bottom: 0;
-     background-color:white;
-     width: 100%;
-     height: 6rem;
-     display: grid;
-     place-items: center;
- }
- .iconlist {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     margin-top: 0.75rem;
- }
- .s_icon {
-     width: 4rem;
-     height: 2.85rem;
-     padding: 0 0.5rem;
- }
- .made_by {
-     font-size: 0.65rem;
-     text-align: center;
-     margin-bottom: 0.75rem;
-     margin-bottom: 0.5rem;
- }
- 
- .profile_container {
-     /* background-color: violet; */
-     display: grid;
-     grid-template-columns: 1fr 7rem 1fr ;
-     height: 80vh;
-     place-items: center;
-   
- }
- 
- .ava_container {
-     display: flex;
- }
- 
-
- .play {
-     display: grid;
-     place-items: center;
-     position: absolute;
-     grid-template-rows: 2fr 1.25fr 2fr;
-     height: 100%;
- }
- 
- .play_btn{
-     width: 5rem
- }
- 
- /* .play_btn:hover {
-    
- } */
- .play_icon {
-     justify-content: center;
-     display: flex;
- }
- .play_icon img:hover {
-     zoom: 105%;
- }
- 
- .d_icon {
-     width: 5rem;
- }
- 
- .deck {
-     display: grid;
-     place-items: end;
-     max-width: 950px;
-     padding-right: 2.5rem;
- 
- }
- 
- .deck:hover {
-     zoom: 101%;
- }
- 
- .winrate {
-     text-align: center;
- }
- 
- .pokeball {
-     width: 3rem;
-     padding-right: 0.25rem;
- }
- .welcome span {
-     font-size: inherit;
- }
- 
- .gymleader_ava {
-     width: 100px;
-     height: 300px;
-     padding-top: 2.5rem ;
- 
- }
- .gymlead_container {
-     display: flex;
-     align-items: center;
-     justify-content: center;
- }
- .center_gym {
-     height: 75vh;
-     border-radius: 15px;
-     display: grid;
-     place-items: center;
-     box-shadow: -1px 4px 8px 0 rgba(0, 255, 13, 0.973), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-     background: #ffffff8f;
- }
- .gymlead_page {
-     height:80vh;
- }
- 
- .pokemon_card {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     flex-direction: column;
-     line-height: 1.5rem;
-     text-align: center;
- }
- 
- .pokemon_img {
-     width:25rem;
-     aspect-ratio: 3/2;
-     margin:0;
-     padding: 0;
- }
- 
- .pokemon_card strong {
-     font-size: 1.25rem;
- }
-
- 
- 
- @media only screen and (max-width: 600px) {
-     .social {
-         height: 4.75rem;
-         transition: 0.2 ease-in;
-     }
-     .iconlist {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         margin-top: 0.55rem;
-     }
-     
-     .s_icon {
-         width: 3.5rem;
-         height: 2.5rem;
-         padding: 0 0.5rem;
-     }
-     .made_by {
-         font-size: 0.55rem;
-         margin-top: 0.25rem;
-         margin-bottom: 0.4rem;
-     }
-     .avatar {
-         width: 25vh;
-     }
-     
- }
- 
- .pokemon_card_container {
-     border-style: dotted;
-     width: max-content;
-     border-radius: 15px;
-     display: flex;
-     flex-direction: column;
-     padding: 5rem 0;
- }
- 
-
- 
- /* battle page design */
- .myCard {
-     background: transparent;
-     width: 40%;
-     border: 1px solid transparent;
- }
- 
- .myCardPlayerMargin {
-     margin: 30px 0px 0px 0px;
- }
- 
- .myCardChallengerMargin {
-     margin: 30px 0px 0px 600px;
- }
- 
- .battleLinkResultMargin {
-     position: absolute;
-     margin: 100px 0px 0px 30px;
- }
- 
- .myCardImgCon {
-     display: flex;
-     align-items: center;
-     justify-content: center;
- }
- 
- .pokemonImg {
-     height: 30%;
-     width: 30%;
- }
- 
- .trainerImg {
-     height: 10%;
-     width: 10%;
- }
- 
- .myCardPlayerTitle::first-letter, .myCardPlayerGymLeader::first-letter {
-     text-transform:uppercase;
- }
- .myCardPlayerTitle, .myCardPlayerGymLeader {
-     text-align: center;
- }
- 
- .myCardPlayerTitle {
-     color: #e73c7e;
- }
- 
- .myCardPlayerGymLeader {
-     color: #23a6d5
- }
- 
- .battleLink {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     text-align: center;
-     height: 100px;
-     width: 100px;
-     border-radius: 50%;
-     border: 3px solid #23d5ab;
-     position: absolute;
-     margin: 0px 0px 0px 460px;
-     transition: transform 1s;
- }
- .battleLink:hover {
-     transform: rotateZ(360deg);
- }
- 
- a:link {
-     text-decoration: none;
-     color: #23d5ab
- }
-
- a:hover {
-    text-decoration: none;
-    color: #ca49b5
-}
-
- a:visited {
-     text-decoration: none;
-     color: #23d5ab
- }
- 
- .backLinkButton {
-     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-     border: 1px solid white;
- }
- .backLinkButton:hover {
-     border: 1px solid #23d5ab;
- }
- 
- .myFlashNotice {
-     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-     color: white;
-     border: transparent;
- }
-
- .deckCardDesign {
-    background-color: transparent;
-    box-shadow: -1px 4px 8px 0 rgba(238, 255, 0, 0.973), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 0rem;
- }
- .deckCardDesign img {
-    height: 13rem;
- }
-
- .deck_cont {
-    display: flex;
-    justify-content: center;
-    width: 100%;
- }
-
- .pokemon_card_container {
-    border-style: dotted;
-    width: max-content;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    padding: 5rem 0;
-}
-
-.deck_cont {
-    display: flex;
-    margin-left: -1rem;
-}
-
-/* battle page design */
-.myCard {
-    background: transparent;
-    width: 40%;
-    border: 1px solid transparent;
-}
-
-.myCardPlayerMargin {
-    margin: 30px 0px 0px 0px;
-}
-
-.myCardChallengerMargin {
-    margin: 30px 0px 0px 600px;
-}
-
-.battleLinkResultMargin {
-    position: absolute;
-    margin: 100px 0px 0px 30px;
-}
-
-.myCardImgCon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pokemonImg {
-    height: 30%;
-    width: 30%;
-}
-
-.trainerImg {
-    height: 10%;
-    width: 10%;
-}
-
-.myCardPlayerTitle::first-letter, .myCardPlayerGymLeader::first-letter {
-    text-transform:uppercase;
-}
-.myCardPlayerTitle, .myCardPlayerGymLeader {
-    text-align: center;
-}
-
-.myCardPlayerTitle {
-    color: #e73c7e;
-}
-
-.myCardPlayerGymLeader {
-    color: #23a6d5
-}
-
-.battleLink {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    border: 3px solid #23d5ab;
-    position: absolute;
-    margin: 0px 0px 0px 460px;
-    transition: transform 1s;
-}
-.battleLink:hover {
-    transform: rotateZ(360deg);
-}
-
-a:link {
-    text-decoration: none;
-    color: #23d5ab
-}
-a:visited {
-    text-decoration: none;
-    color: #23d5ab
-}
-
-.backLinkButton {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    border: 1px solid white;
-}
-.backLinkButton:hover {
-    border: 1px solid #23d5ab;
-}
-
-.myFlashNotice {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    color: white;
-    border: transparent;
-}
-
-.deckCardDesign {
-background-color: transparent;
-box-shadow: -1px 4px 8px 0 rgba(238, 255, 0, 0.973), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
- 
- 
 @media only screen and (max-width: 600px) {
     .social {
         height: 4.75rem;
@@ -651,7 +11,6 @@ box-shadow: -1px 4px 8px 0 rgba(238, 255, 0, 0.973), 0 6px 20px 0 rgba(0, 0, 0, 
         align-items: center;
         margin-top: 0.55rem;
     }
-    
     .s_icon {
         width: 3.5rem;
         height: 2.5rem;
@@ -665,6 +24,383 @@ box-shadow: -1px 4px 8px 0 rgba(238, 255, 0, 0.973), 0 6px 20px 0 rgba(0, 0, 0, 
     .avatar {
         width: 25vh;
     }
-     
 }
 
+* {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    width: 100%;
+}
+
+.welcome {
+    font-size: 1.5rem;
+    height: 72.5vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.page_container {
+    height: 100%;
+    max-width: 1000px;
+ }
+ 
+.container_center_main {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rosybrown;
+ }
+ 
+.user_form {
+    max-width: 300px;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1.75rem;
+}
+ 
+.social {
+    position: fixed;
+    bottom: 0;
+    background-color:white;
+    width: 100%;
+    height: 6rem;
+    display: grid;
+    place-items: center;
+}
+
+.iconlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.75rem;
+}
+
+.s_icon {
+    width: 4rem;
+    height: 2.85rem;
+    padding: 0 0.5rem;
+}
+
+.made_by {
+    font-size: 0.65rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+ 
+.profile_container {
+    display: grid;
+    grid-template-columns: 1fr 7rem 1fr ;
+    height: 80vh;
+    place-items: center;
+}
+ 
+.ava_container {
+    display: flex;
+}
+ 
+.avatar {
+    width: 35vh;
+}
+
+.selected {
+    height: 50%;
+    position: relative;
+    bottom: -14rem;
+}
+ 
+.play {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    grid-template-rows: 2fr 1.25fr 2fr;
+    height: 100%;
+}
+ 
+.play_btn {
+    width: 5rem;
+}
+ 
+.play_icon {
+    justify-content: center;
+    display: flex;
+}
+.play_icon img:hover {
+    zoom: 105%;
+}
+ 
+.d_icon {
+    height: 6rem;
+    width: 6rem;
+}
+ 
+.deck {
+    display: grid;
+    place-items: end;
+    max-width: 950px;
+    padding-right: 2.5rem;
+}
+ 
+.deck:hover {
+    zoom: 101%;
+}
+ 
+.winrate {
+    text-align: center;
+    color: gold
+}
+ 
+.pokeball {
+    width: 3rem;
+    padding-right: 0.25rem;
+}
+
+.welcome span {
+    font-size: inherit;
+    margin-top: 110px;
+    color: gold
+}
+ 
+.gymleader_ava {
+    width: 130px;
+    height: 250px;
+    padding-top: 2.5rem ;
+}
+
+.gymlead_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.center_gym {
+    height: 75vh;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    box-shadow: 5px 9px 13px 0px rgb(218 255 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #ffffff24;
+}
+
+.gymlead_page {
+    height:80vh;
+}
+ 
+.pokemon_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 1.5rem;
+    text-align: center;
+}
+ 
+.pokemon_img {
+    width:25rem;
+    aspect-ratio: 3/2;
+    margin:0;
+    padding: 0;
+}
+ 
+.pokemon_card strong {
+    font-size: 1.25rem;
+}
+
+.deckCardDesign {
+    background: #ffffff24;
+    box-shadow: 3px 7px 11px 0 rgba(238, 255, 0, 0.973), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0rem;
+    border-radius: 20px;
+    overflow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deckCardDesign img {
+    height: 12rem;
+    width: 10rem;
+}
+
+.deck_cont {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.pokemon_card_container {
+    border-style: dotted;
+    width: max-content;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 0;
+}
+
+.HomePageImgURL {
+    height: 300px;
+    width: 300px;
+}
+
+.gymLeaderHeader {
+    color: gold;
+    font-size: 1.2rem;
+}
+
+.nurseJoyCon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 210px;
+    margin-top: 40px;
+    height: 150px;
+    width: 350px;
+    background: #ffffff24;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 5px 9px 13px 0px rgb(218 255 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nurseJoyImg {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.nurseJoyDes {
+    margin-left: 10px;
+    color: gold;
+}
+
+.myDeck {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.deckTitle {
+    width: 100%;
+    text-align: center;
+    margin: 5px 0px 5px 0px;
+}
+
+.myCard {
+    background: #ffffff24;
+    width: 40%;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 5px 9px 13px 0px rgb(218 255 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+}
+ 
+.myCardPlayerMargin {
+    top: 10px;
+}
+ 
+.myCardChallengerMargin {
+    bottom: 200px;
+    left: 610px;
+}
+ 
+.battleLinkResultMargin {
+    position: fixed;
+    bottom: 100px;
+}
+ 
+.myCardImgCon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.pokemonImg {
+    height: 40%;
+    width: 40%;
+}
+ 
+.trainerImg {
+    height: 20%;
+    width: 20%;
+}
+ 
+.myCardPlayerTitle::first-letter, .myCardPlayerGymLeader::first-letter {
+    text-transform:uppercase;
+}
+
+.myCardPlayerTitle, .myCardPlayerGymLeader {
+    text-align: center;
+}
+ 
+.myCardPlayerTitle {
+    color: #e73c7e;
+}
+ 
+.myCardPlayerGymLeader {
+    color: #23a6d5
+}
+ 
+.battleLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 3px solid gold;
+    transition: transform 1s;
+    box-shadow: 5px 9px 13px 0px rgb(218 255 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    left: 455px;
+    bottom: 80px;
+}
+.battleLink:hover {
+    transform: rotateZ(360deg);
+}
+ 
+a:link {
+    text-decoration: none;
+    color: gold
+}
+
+a:hover {
+    text-decoration: none;
+    color: gold
+}
+
+a:visited {
+    text-decoration: none;
+    color: gold
+}
+ 
+.backLinkButton {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    border: 1px solid white;
+}
+.backLinkButton:hover {
+    border: 1px solid gold;
+}
+ 
+.myFlashNotice {
+    background: #ffffff24;
+    color: gold;
+    border: transparent;
+    box-shadow: 5px 9px 13px 0px rgb(218 255 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
