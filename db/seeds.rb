@@ -33,19 +33,10 @@ request('https://pokeapi.co/api/v2/pokemon/magikarp')
 @data_magikarp = request('https://pokeapi.co/api/v2/pokemon/magikarp')
 
 PlayerOne = User.create(
-    email:"playerone@email.com",
-    password:"playerone",
-    avatar:"https://cdn2.bulbagarden.net/upload/thumb/c/cd/Ash_JN.png/150px-Ash_JN.png",
+    email: "playerone@email.com",
+    password: "playerone",
+    avatar: "https://cdn2.bulbagarden.net/upload/thumb/c/cd/Ash_JN.png/150px-Ash_JN.png",
     winrate: 100
-)
-PlayerOne.cards.create(
-    user_id: PlayerOne.id,
-    name: @data_charizard["name"],
-    pokemon_type: @data_charizard["types"][0]["type"]["name"],
-    ability: @data_charizard["abilities"][0]["ability"]["name"],
-    hp: @data_charizard["stats"][0]["base_stat"],
-    attack: @data_charizard["stats"][1]["base_stat"],
-    img_url: @data_charizard["sprites"]["front_default"]
 )
 PlayerOne.cards.create(
     user_id: PlayerOne.id,
@@ -58,6 +49,15 @@ PlayerOne.cards.create(
 )
 PlayerOne.cards.create(
     user_id: PlayerOne.id,
+    name: @data_charizard["name"],
+    pokemon_type: @data_charizard["types"][0]["type"]["name"],
+    ability: @data_charizard["abilities"][0]["ability"]["name"],
+    hp: @data_charizard["stats"][0]["base_stat"],
+    attack: @data_charizard["stats"][1]["base_stat"],
+    img_url: @data_charizard["sprites"]["front_default"]
+)
+PlayerOne.cards.create(
+    user_id: PlayerOne.id,
     name: @data_venusaur["name"],
     pokemon_type: @data_venusaur["types"][0]["type"]["name"],
     ability: @data_venusaur["abilities"][0]["ability"]["name"],
@@ -67,8 +67,8 @@ PlayerOne.cards.create(
 )
 
 FirstGymLeader = GymLeader.create(
-    name:"Brock",
-    avatar:"https://upload.wikimedia.org/wikipedia/en/7/71/DP-Brock.png"
+    name: "Brock",
+    avatar: "https://upload.wikimedia.org/wikipedia/en/7/71/DP-Brock.png"
 )
 FirstGymLeader.cards.create(
     user_id: FirstGymLeader.id,
@@ -81,8 +81,8 @@ FirstGymLeader.cards.create(
 )
 
 SecondGymLeader = GymLeader.create(
-    name:"Team Rocket",
-    avatar:"https://cdn2.bulbagarden.net/upload/thumb/9/99/Team_Rocket_trio_SM.png/180px-Team_Rocket_trio_SM.png"
+    name: "Team Rocket",
+    avatar: "https://cdn2.bulbagarden.net/upload/thumb/9/99/Team_Rocket_trio_SM.png/180px-Team_Rocket_trio_SM.png"
 )
 SecondGymLeader.cards.create(
     user_id: PlayerOne.id,
@@ -95,8 +95,8 @@ SecondGymLeader.cards.create(
 )
 
 ThirdGymLeader = GymLeader.create(
-    name:"Misty",
-    avatar:"https://cdn2.bulbagarden.net/upload/thumb/f/fb/Misty_SM.png/150px-Misty_SM.png"
+    name: "Misty",
+    avatar: "https://cdn2.bulbagarden.net/upload/thumb/f/f6/Lets_Go_Pikachu_Eevee_Misty.png/183px-Lets_Go_Pikachu_Eevee_Misty.png"
 )
 ThirdGymLeader.cards.create(
     user_id: SecondGymLeader.id,

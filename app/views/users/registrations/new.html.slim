@@ -1,36 +1,36 @@
 .container.user_form.text-center
   .card.p-4 style="background-color: transparent; border-radius:10px; border-width:2px; border-style: dashed;"
     .d-flex.justify-content
-      h2.mb-4.pt-4
+      h2.mb-4.pt-4 style="color: gold;"
         | Sign up
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "users/shared/error_messages", resource: resource
       .field
-        = f.label :email
+        = f.label :email, style: "color: gold;"
         br
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: "text-center"
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "text-center", style: "background-color: white; border: 3px solid gold; color: gold; border-radius: 15px;"
 
       .field
-        = f.label :avatar
+        = f.label :avatar, style: "color: gold;"
         br
-        = f.text_field :avatar, class: "text-center"
+        = f.text_field :avatar, class: "text-center", style: "background-color: white; border: 3px solid gold; color: gold; border-radius: 15px;"
 
       .field
-        = f.label :password
+        = f.label :password, style: "color: gold;"
         - if @minimum_password_length
-          em
+          em style="color: gold;"
             | (
             = @minimum_password_length
             |  characters minimum)
         br
-        = f.password_field :password, autocomplete: "new-password", class: "text-center"
+        = f.password_field :password, autocomplete: "new-password", class: "text-center", style: "background-color: white; border: 3px solid gold; color: gold; border-radius: 15px;"
       .field
-        = f.label :password_confirmation
+        = f.label :password_confirmation, style: "color: gold;"
         br
-        = f.password_field :password_confirmation, autocomplete: "new-password", class: "text-center"
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: "text-center", style: "background-color: white; border: 3px solid gold; color: gold; border-radius: 15px;"
 
       .d-flex.justify-content-center
         .actions.m-4.col-6
-          = f.submit "Sign up"
+          = f.submit "Sign up", style: "background-color: #ffffff24;; border: 3px solid gold; color: gold; border-radius: 15px;"
     = render "users/shared/links"
 
