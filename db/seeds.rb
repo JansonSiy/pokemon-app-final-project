@@ -36,7 +36,9 @@ PlayerOne = User.create(
     email: "playerone@email.com",
     password: "playerone",
     avatar: "https://cdn2.bulbagarden.net/upload/thumb/c/cd/Ash_JN.png/150px-Ash_JN.png",
-    winrate: 100
+    winrate: 100,
+    win_count: 0,
+    battle_count: 0
 )
 PlayerOne.cards.create(
     user_id: PlayerOne.id,
