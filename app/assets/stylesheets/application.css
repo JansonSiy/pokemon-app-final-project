@@ -52,13 +52,14 @@
  
 .container_center_main {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    position: fixed;
+    position: absolute;
     top: 0;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     background-color: rosybrown;
+    min-height: 100vh; 
  }
  
 .user_form {

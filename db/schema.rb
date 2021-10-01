@@ -38,8 +38,9 @@ ActiveRecord::Schema.define(version: 2021_09_21_142348) do
   create_table "cards", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
-    t.string "pokemon_type"
-    t.string "ability"
+    t.string "pokemon_type", default: [], array: true
+    t.string "ability", default: [], array: true
+    t.string "move", default: [], array: true
     t.integer "hp"
     t.integer "attack"
     t.string "img_url"
@@ -60,12 +61,6 @@ ActiveRecord::Schema.define(version: 2021_09_21_142348) do
   create_table "gym_leaders", force: :cascade do |t|
     t.string "name"
     t.string "avatar"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "tests", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
