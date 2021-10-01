@@ -27,10 +27,11 @@ end
 
 # Seed User with 3 random pokemon
 PlayerOne = User.create(
+    name: "ash gray",
     email: "playerone@email.com",
     password: "playerone",
     avatar: "https://cdn2.bulbagarden.net/upload/thumb/c/cd/Ash_JN.png/150px-Ash_JN.png",
-    winrate: 100
+    winrate: 0
 )
 3.times.each do 
     c1 = Card.find(rand(Card.first.id..Card.last.id))

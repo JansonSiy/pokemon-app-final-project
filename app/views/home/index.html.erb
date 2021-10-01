@@ -8,7 +8,7 @@
         </div>
         <div class="play">
             <div class="winrate">
-                <h3 class="current_user"><%= current_user.avatar.upcase %></h3>
+                <h3 class="current_user"><%= current_user.name.upcase %></h3>
                 <h4>Winrate: <%= current_user.winrate %></h4>
             </div>
             <div class="d-flex justify-content center">
@@ -27,6 +27,7 @@
                 
         </div>
     </div>
+
 <% else %>
     <h4 class="welcome">
         <span>Welcome to P<img alt="" class="pokeball" src="img_avatar/pokeball.svg" />kemon App!</span>
