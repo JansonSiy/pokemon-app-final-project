@@ -3,6 +3,14 @@ Card.destroy_all
 GymLeader.destroy_all
 Battle.destroy_all
 
+Battle.create(
+    card_id: 1,
+    user_attack: false,
+    gym_leader_attack: true,
+    hp: 1,
+    damage: 1
+)
+
 require 'httparty'
 
 def request(url)
@@ -37,15 +45,18 @@ PlayerOne = User.create(
     password: "playerone",
     avatar: "https://cdn2.bulbagarden.net/upload/thumb/c/cd/Ash_JN.png/150px-Ash_JN.png",
     winrate: 100,
-    win_count: 0,
-    battle_count: 0
+    # win_count: 0,
+    win_count: 1,
+    # battle_count: 0
+    battle_count: 2
 )
 PlayerOne.cards.create(
     user_id: PlayerOne.id,
     name: @data_pikachu["name"],
     pokemon_type: @data_pikachu["types"][0]["type"]["name"],
     ability: @data_pikachu["abilities"][0]["ability"]["name"],
-    hp: @data_pikachu["stats"][0]["base_stat"],
+    # hp: @data_pikachu["stats"][0]["base_stat"],
+    hp: 300,
     attack: @data_pikachu["stats"][1]["base_stat"],
     img_url: @data_pikachu["sprites"]["front_default"]
 )
@@ -105,7 +116,10 @@ ThirdGymLeader.cards.create(
     name: @data_magikarp["name"],
     pokemon_type: @data_magikarp["types"][0]["type"]["name"],
     ability: @data_magikarp["abilities"][0]["ability"]["name"],
-    hp: @data_magikarp["stats"][0]["base_stat"],
+    # hp: @data_magikarp["stats"][0]["base_stat"],
+    # hp: 100,
+    hp: 300,
     attack: @data_magikarp["stats"][1]["base_stat"],
+    # attack: 200,
     img_url: @data_magikarp["sprites"]["front_default"]
 )
