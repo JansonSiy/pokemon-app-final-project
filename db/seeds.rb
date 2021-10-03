@@ -3,14 +3,6 @@ Card.destroy_all
 GymLeader.destroy_all
 Battle.destroy_all
 
-Battle.create(
-    card_id: 1,
-    user_attack: false,
-    gym_leader_attack: true,
-    hp: 1,
-    damage: 1
-)
-
 require 'httparty'
 
 def request(url)
@@ -45,18 +37,16 @@ PlayerOne = User.create(
     password: "playerone",
     avatar: "https://cdn2.bulbagarden.net/upload/thumb/c/cd/Ash_JN.png/150px-Ash_JN.png",
     winrate: 100,
-    # win_count: 0,
-    win_count: 1,
-    # battle_count: 0
-    battle_count: 2
+    win_count: 0,
+    battle_count: 0
 )
 PlayerOne.cards.create(
     user_id: PlayerOne.id,
     name: @data_pikachu["name"],
     pokemon_type: @data_pikachu["types"][0]["type"]["name"],
     ability: @data_pikachu["abilities"][0]["ability"]["name"],
-    # hp: @data_pikachu["stats"][0]["base_stat"],
-    hp: 300,
+    hp: @data_pikachu["stats"][0]["base_stat"] * 5,
+    initial_hp: @data_pikachu["stats"][0]["base_stat"] * 5,
     attack: @data_pikachu["stats"][1]["base_stat"],
     img_url: @data_pikachu["sprites"]["front_default"]
 )
@@ -65,7 +55,8 @@ PlayerOne.cards.create(
     name: @data_charizard["name"],
     pokemon_type: @data_charizard["types"][0]["type"]["name"],
     ability: @data_charizard["abilities"][0]["ability"]["name"],
-    hp: @data_charizard["stats"][0]["base_stat"],
+    hp: @data_charizard["stats"][0]["base_stat"] * 5,
+    initial_hp: @data_charizard["stats"][0]["base_stat"] * 5,
     attack: @data_charizard["stats"][1]["base_stat"],
     img_url: @data_charizard["sprites"]["front_default"]
 )
@@ -74,7 +65,8 @@ PlayerOne.cards.create(
     name: @data_venusaur["name"],
     pokemon_type: @data_venusaur["types"][0]["type"]["name"],
     ability: @data_venusaur["abilities"][0]["ability"]["name"],
-    hp: @data_venusaur["stats"][0]["base_stat"],
+    hp: @data_venusaur["stats"][0]["base_stat"] * 5,
+    initial_hp: @data_venusaur["stats"][0]["base_stat"] * 5,
     attack: @data_venusaur["stats"][1]["base_stat"],
     img_url: @data_venusaur["sprites"]["front_default"]
 )
@@ -88,7 +80,8 @@ FirstGymLeader.cards.create(
     name: @data_mewtwo["name"],
     pokemon_type: @data_mewtwo["types"][0]["type"]["name"],
     ability: @data_mewtwo["abilities"][0]["ability"]["name"],
-    hp: @data_mewtwo["stats"][0]["base_stat"],
+    hp: @data_mewtwo["stats"][0]["base_stat"] * 5,
+    initial_hp: @data_mewtwo["stats"][0]["base_stat"] * 5,
     attack: @data_mewtwo["stats"][1]["base_stat"],
     img_url: @data_mewtwo["sprites"]["front_default"]
 )
@@ -102,7 +95,8 @@ SecondGymLeader.cards.create(
     name: @data_blastoise["name"],
     pokemon_type: @data_blastoise["types"][0]["type"]["name"],
     ability: @data_blastoise["abilities"][0]["ability"]["name"],
-    hp: @data_blastoise["stats"][0]["base_stat"],
+    hp: @data_blastoise["stats"][0]["base_stat"] * 5,
+    initial_hp: @data_blastoise["stats"][0]["base_stat"] * 5,
     attack: @data_blastoise["stats"][1]["base_stat"],
     img_url: @data_blastoise["sprites"]["front_default"]
 )
@@ -116,10 +110,16 @@ ThirdGymLeader.cards.create(
     name: @data_magikarp["name"],
     pokemon_type: @data_magikarp["types"][0]["type"]["name"],
     ability: @data_magikarp["abilities"][0]["ability"]["name"],
-    # hp: @data_magikarp["stats"][0]["base_stat"],
-    # hp: 100,
-    hp: 300,
+    hp: @data_magikarp["stats"][0]["base_stat"] * 5,
+    initial_hp: @data_magikarp["stats"][0]["base_stat"] * 5,
     attack: @data_magikarp["stats"][1]["base_stat"],
-    # attack: 200,
     img_url: @data_magikarp["sprites"]["front_default"]
+)
+
+Battle.create(
+    card_id: 1,
+    user_attack: false,
+    gym_leader_attack: true,
+    hp: 1,
+    damage: 1
 )

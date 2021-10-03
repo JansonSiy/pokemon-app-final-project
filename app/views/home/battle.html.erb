@@ -45,7 +45,8 @@
     <div class="toast-body">
         <div class="notice"><%= flash[:notice].html_safe %></div>
         <div class="mt-2 pt-2">
-            <%= link_to 'Back', challenge_path, class: "btn btn-primary btn-sm backLinkButton" %>
+            <%= link_to 'Back', challenge_path, class: "btn btn-primary btn-sm backLinkButton backLinkButtonMargin" %>
+            <%= link_to 'Full Potion', heal_path, method: :post, class: "btn btn-primary btn-sm backLinkButton" %>
         </div>
     </div>
   </div>
