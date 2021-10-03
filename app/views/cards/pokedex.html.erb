@@ -1,0 +1,32 @@
+<% @cards.each do |card| %>
+  <div class="card p-2 my-4"  >
+    <h4 class="card-header">
+      <%= card.name.upcase  %>
+    </h4>
+    <div class="card-body" >
+      <div style="float:left; width: max-content;" class="card p-3 me-2">
+        <img src="<%= card.img_url  %>" alt="" style="margin: -25px 0; height: 210px; display:flex; justify-content:center ">       
+        <div>
+          <strong>TYPE: </strong>
+          <% card.pokemon_type.each do |type| %>
+            <span class="badge bg-warning text-dark  p-1 my-1" style="width: max-content;"> <%= type  %> </span>
+          <% end %>
+        </div>
+
+        <div>
+          <strong>ABILILTY: </strong>
+          <% card.ability.each do |ability| %>
+            <span class="badge bg-primary p-1 my-1" style="width: max-content;"> <%= ability  %> </span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="p-2" >
+        <strong>MOVES: </strong>
+        <% card.move.map do |move| %>
+          <span class="card-text badge bg-success p-1 my-1" style="width: max-content;"> <%= move%> </span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
