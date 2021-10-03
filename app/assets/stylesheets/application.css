@@ -55,11 +55,10 @@
     position: absolute;
     top: 0;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     background-color: rosybrown;
-    min-height: 100vh; 
+    min-height: 100vh;
  }
  
 .user_form {
@@ -267,8 +266,8 @@
     align-items: center;
     justify-content: center;
     position: fixed;
-    right: 210px;
-    margin-top: 40px;
+    right: 15vw;
+    top: 5vw;
     height: 150px;
     width: 350px;
     background: #ffffff24;
@@ -312,12 +311,13 @@
 }
  
 .myCardPlayerMargin {
-    top: 10px;
+    top: 1vw;
 }
  
 .myCardChallengerMargin {
-    bottom: 200px;
-    left: 610px;
+    float: right;
+    top: -8vw;
+    right: -2vw;
 }
  
 .battleLinkResultMargin {
@@ -368,9 +368,9 @@
     border: 3px solid gold;
     transition: transform 1s;
     box-shadow: 5px 9px 13px 0px rgb(218, 255, 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    position: relative;
-    left: 455px;
-    bottom: 80px;
+    position: fixed;
+    left: 47vw;
+    bottom: 20vw;
 }
 .battleLink:hover {
     transform: rotateZ(360deg);
