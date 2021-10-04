@@ -16,7 +16,7 @@ require 'httparty'
 
 # seed cards for pokedex
 count = 0
-2.times.each do 
+100.times.each do 
     count += 1
     response = HTTParty.get("https://pokeapi.co/api/v2/pokemon/#{count}/")
     @datas = JSON.parse(response.body)
