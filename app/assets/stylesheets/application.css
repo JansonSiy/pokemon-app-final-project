@@ -398,6 +398,9 @@ a:visited {
 .backLinkButton:hover {
     border: 1px solid gold;
 }
+.backLinkButtonMargin {
+    margin-bottom: 5px;
+}
  
 .myFlashNotice {
     background: #ffffff24;

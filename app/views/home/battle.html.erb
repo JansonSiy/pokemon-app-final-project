@@ -17,13 +17,13 @@
     <p class="card-text">
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 100%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                hp: <%= current_user.cards.first.hp %>/<%= current_user.cards.first.hp %>
+                hp: <%= current_user.cards.first.hp %>/<%= current_user.cards.first.initial_hp %>
             </div>
         </div>
         <br>
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                ability: <%= current_user.cards.first.ability %>
+                ability: <%= current_user.cards.first.ability[0] %>
             </div>
         </div>
         <br>
@@ -43,9 +43,10 @@
 <% if flash[:notice] %>
   <div class="toast toast-demo fade show battleLinkResultMargin myFlashNotice" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-body">
-        Battle is over! <br> <br> <div class="notice"><%= flash[:notice].html_safe %></div>
+        <div class="notice"><%= flash[:notice].html_safe %></div>
         <div class="mt-2 pt-2">
-            <%= link_to 'Back', challenge_path, class: "btn btn-primary btn-sm backLinkButton" %>
+            <%= link_to 'Back', challenge_path, class: "btn btn-primary btn-sm backLinkButton backLinkButtonMargin" %>
+            <%= link_to 'Full Potion', heal_path, method: :post, class: "btn btn-primary btn-sm backLinkButton" %>
         </div>
     </div>
   </div>
@@ -63,13 +64,13 @@
     <p class="card-text">
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 100%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                hp: <%= @gym_leader.cards.first.hp %>/<%= @gym_leader.cards.first.hp %>
+                hp: <%= @gym_leader.cards.first.hp %>/<%= @gym_leader.cards.first.initial_hp %>
             </div>
         </div>
         <br>
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                ability: <%= @gym_leader.cards.first.ability %>
+                ability: <%= @gym_leader.cards.first.ability[0] %>
             </div>
         </div>
         <br>
