@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
+  get '/pokedex', to: 'cards#pokedex'
   get '/challenge', to: 'cards#index'
   get '/deck', to: 'cards#deck'
   get '/hello', to: 'home#hello'

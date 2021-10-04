@@ -2,26 +2,35 @@
     <div class="profile_container">
         <div class="d-flex">
             <div class="ava_container">
-                <%= image_tag current_user.avatar, class:"avatar" %>
+                <img src="https://cdn2.bulbagarden.net/upload/thumb/c/cd/Ash_JN.png/150px-Ash_JN.png" alt=""  class="avatar">
                 <img class="selected" src="<%= current_user.cards.order(updated_at: :asc).last.img_url %>" />
             </div>
         </div>
         <div class="play">
             <div class="winrate">
-                <h3 class="current_user"><%= current_user.email.upcase %></h3>
+                <h3 class="current_user"><%= current_user.name.upcase %></h3>
                 <h4>Winrate: <%= current_user.winrate %>%</h4>
             </div>
             <div class="d-flex justify-content center">
                 <a class="play_icon"<% _slim_codeattributes1 = challenge_path; if _slim_codeattributes1; if _slim_codeattributes1 == true %> href=""<% else %> href="<%= _slim_codeattributes1 %>"<% end; end %>>
                     <img class="d_icon" src="img_avatar/play-button.png" /></a>
             </div>
-            <a class="deck"<% _slim_codeattributes2 = deck_path; if _slim_codeattributes2; if _slim_codeattributes2 == true %> href=""<% else %> href="<%= _slim_codeattributes2 %>"<% end; end %>>
-                <img class="d_icon" src="img_avatar/deck.png" /></a>
+
+            <span class="deck" style=" display:flex; flex-direction: row-reverse; width:fit-content">
+                <a style="width:auto" href="<%= pokedex_path%>">
+                    <img class="d_icon" src="https://images-na.ssl-images-amazon.com/images/I/71w1hX8eOJL.png" />
+                </a>
+                <a style="width:auto"  href="<%=deck_path%>">
+                    <img class="d_icon" src="img_avatar/deck.png" />
+                </a>
+            </span >
+                
         </div>
     </div>
+
 <% else %>
     <h4 class="welcome">
         <span>Welcome to P<img alt="" class="pokeball" src="img_avatar/pokeball.svg" />kemon App!</span>
-        <div class="HomePageImgURL"><img src="<%= User.first.cards.all.pluck(:img_url).first %>" alt="pikachu_img_url"></div>
+        <div class="HomePageImgURL"><img src="<%= Card.find(rand(Card.first.id..Card.last.id)).img_url %>" alt="pikachu_img_url"></div>       
     </h4>
 <% end %>

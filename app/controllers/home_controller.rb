@@ -34,6 +34,7 @@ class HomeController < ApplicationController
           pokemon_type: @gym_leader.cards.first.pokemon_type,
           ability: @gym_leader.cards.first.ability,
           hp: @gym_leader.cards.first.initial_hp,
+          initial_hp: @gym_leader.cards.first.initial_hp,
           attack: @gym_leader.cards.first.attack,
           img_url: @gym_leader.cards.first.img_url
         )
@@ -50,7 +51,7 @@ class HomeController < ApplicationController
         redirect_to battle_path(params[:id])
       else
         flash[:notice] = "Direct hit! #{@gym_leader.cards.first.name}'s HP fell to #{@gym_leader.cards.first.hp}
-          after #{@user.cards.first.name} used #{@user.cards.first.ability}!"
+          after #{@user.cards.first.name} used #{@user.cards.first.ability[0]}!"
 
         redirect_to battle_path(params[:id])
       end
@@ -81,7 +82,7 @@ class HomeController < ApplicationController
         redirect_to battle_path(params[:id])
       else
           flash[:notice] = "Direct hit! #{@user.cards.first.name}'s' HP fell to #{@user.cards.first.hp}
-          after #{@gym_leader.cards.first.name} used #{@gym_leader.cards.first.ability}!"
+          after #{@gym_leader.cards.first.name} used #{@gym_leader.cards.first.ability[0]}!"
 
           redirect_to battle_path(params[:id])
       end

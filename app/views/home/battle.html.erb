@@ -17,13 +17,13 @@
     <p class="card-text">
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 100%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                hp: <%= current_user.cards.first.hp %>/<%= current_user.cards.first.hp %>
+                hp: <%= current_user.cards.first.hp %>/<%= current_user.cards.first.initial_hp %>
             </div>
         </div>
         <br>
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                ability: <%= current_user.cards.first.ability %>
+                ability: <%= current_user.cards.first.ability[0] %>
             </div>
         </div>
         <br>
@@ -64,13 +64,13 @@
     <p class="card-text">
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 100%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                hp: <%= @gym_leader.cards.first.hp %>/<%= @gym_leader.cards.first.hp %>
+                hp: <%= @gym_leader.cards.first.hp %>/<%= @gym_leader.cards.first.initial_hp %>
             </div>
         </div>
         <br>
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                ability: <%= @gym_leader.cards.first.ability %>
+                ability: <%= @gym_leader.cards.first.ability[0] %>
             </div>
         </div>
         <br>

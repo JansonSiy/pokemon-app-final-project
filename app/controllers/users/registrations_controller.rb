@@ -12,10 +12,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    c1 = Card.find(rand(Card.first.id..Card.last.id))
+    current_user.cards.create(  user_id: current_user.id, 
+                                name: c1.name, 
+                                pokemon_type: c1.pokemon_type, 
+                                ability: c1.ability, 
+                                move: c1.move, 
+                                hp: c1.hp,
+                                initial_hp: c1.initial_hp,
+                                attack: c1.attack, 
+                                img_url: c1.img_url
+    )
     if @user.save
       @user = User.new(user_params)
       UserMailer.with(user: @user).welcome_email.deliver_now
     end
+
   end
 
   # GET /resource/edit
@@ -69,7 +81,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :email,
       :password,
       :password_confirmation,
-      :avatar
+      :avatar,
+      :name
     )
   end
 end

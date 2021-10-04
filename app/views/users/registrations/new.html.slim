@@ -16,6 +16,11 @@
         = f.text_field :avatar, class: "text-center", style: "background-color: white; border: 3px solid gold; color: gold; border-radius: 15px;"
 
       .field
+        = f.label :name, style: "color: gold;"
+        br
+        = f.text_field :name, class: "text-center", style: "background-color: white; border: 3px solid gold; color: gold; border-radius: 15px;"
+
+      .field
         = f.label :password, style: "color: gold;"
         - if @minimum_password_length
           em style="color: gold;"
