@@ -57,9 +57,8 @@ PlayerOne.cards.create(
     move: u1.move
 )
 
-u2 = Card.find(rand(Card.first.id..Card.last.id))
-
 5.times.each do 
+    u2 = Card.find(rand(Card.first.id..Card.last.id))
     PlayerOne.cards.create(
         user_id: PlayerOne.id, 
         name: u2.name, 
