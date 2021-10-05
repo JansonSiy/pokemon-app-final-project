@@ -2,6 +2,7 @@ class CardsController < ApplicationController
   # before_action :set_card, only: %i[select_card]
   # before_action :card_params, only: %i[select_card]
   # include CardsHelper
+  before_action :authenticate_user!
   
   def index
     @users = User.all
