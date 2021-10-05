@@ -2,7 +2,7 @@
     <div class="profile_container">
         <div class="d-flex">
             <div class="ava_container">
-                <img src="https://cdn2.bulbagarden.net/upload/thumb/c/cd/Ash_JN.png/150px-Ash_JN.png" alt=""  class="avatar">
+                <img src="<%= current_user.avatar %>" alt="current_user_avatar"  class="avatar">
                 <img class="selected" src="<%= current_user.cards.order(updated_at: :asc).last.img_url %>" />
             </div>
         </div>

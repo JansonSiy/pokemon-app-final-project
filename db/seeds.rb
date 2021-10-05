@@ -16,7 +16,7 @@ require 'httparty'
 
 # seed cards for pokedex
 count = 0
-100.times.each do 
+10.times.each do 
     count += 1
     response = HTTParty.get("https://pokeapi.co/api/v2/pokemon/#{count}/")
     @datas = JSON.parse(response.body)
@@ -61,8 +61,6 @@ PlayerOne = User.create(
 PlayerOne.cards.create(
     user_id: PlayerOne.id,
     name: @data_pikachu["name"],
-    # pokemon_type: @data_pikachu["types"][0]["type"]["name"],
-    # ability: @data_pikachu["abilities"][0]["ability"]["name"],
     pokemon_type: @data_pikachu["types"].map {|x| x["type"]["name"]},
     ability: @data_pikachu["abilities"].map {|x| x["ability"]["name"]},
     hp: @data_pikachu["stats"][0]["base_stat"] * 5,
