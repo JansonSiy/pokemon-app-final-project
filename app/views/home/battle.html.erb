@@ -1,44 +1,57 @@
+
 <div class="nurseJoyCon">
     <div class="nurseJoyImg">
         <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8c8405e7-da2e-4cdb-ae34-d4e8e1a5331b/d40glnb-fae969dc-753f-448d-acda-8c5fb56a5e4c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhjODQwNWU3LWRhMmUtNGNkYi1hZTM0LWQ0ZThlMWE1MzMxYlwvZDQwZ2xuYi1mYWU5NjlkYy03NTNmLTQ0OGQtYWNkYS04YzVmYjU2YTVlNGMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.zUDpCIdBB5PYt8xWxDSRPOSa9ay37E1b38rPNlf43cU">
     </div>
-    <div class="nurseJoyDes">I will immediately heal your pokemon after the battle!</div>
+    <div class="nurseJoyDes">
+        <span>I will immediately heal your pokemon after the battle!</span>
+        <% if @gym_leader.cards.first.hp < 1 || current_user.cards.order(updated_at: :asc).last.hp < 1 %>
+            <%= link_to  '+', heal_path, method: :post, class: "btn btn-primary btn-sm backLinkButton", style: "width:50px;" %>
+        <% end %>
+    </div>
+
 </div>
 
 <div class="card myCard myCardPlayerMargin">
     <h5 class="card-title myCardImgCon">
         <img src="<%= current_user.avatar %>" class="card-img-top trainerImg" alt="card-img-top">
-        <img src="<%= current_user.cards.first.img_url %>" class="card-img-top pokemonImg" alt="card-img-top">
+        <img src="<%= current_user.cards.order(updated_at: :asc).last.img_url %>" class="card-img-top pokemonImg" alt="card-img-top">
     </h5>
   <div class="card-body">
     <h5 class="card-title myCardPlayerTitle">
-        <%= current_user.cards.first.name %>
+        <%= current_user.cards.order(updated_at: :asc).last.name %>
     </h5>
     <p class="card-text">
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 100%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                hp: <%= current_user.cards.first.hp %>/<%= current_user.cards.first.initial_hp %>
+                hp: <%= current_user.cards.order(updated_at: :asc).last.hp %>/<%= current_user.cards.order(updated_at: :asc).last.initial_hp %>
             </div>
         </div>
         <br>
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                ability: <%= current_user.cards.first.ability[0] %>
+                ability: <%= current_user.cards.order(updated_at: :asc).last.ability[rand(0..current_user.cards.order(updated_at: :asc).last.ability.length)-1] %>
             </div>
         </div>
         <br>
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 100%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                damage: <%= current_user.cards.first.attack %>
+                damage: <%= current_user.cards.order(updated_at: :asc).last.attack %>
             </div>
         </div>    
     </p>
   </div>
 </div>
 
-<div class="battleLink">
-    <%= link_to 'Battle', user_attack_path, method: :post %>
-</div>
+<% if @gym_leader.cards.first.hp < 1 || current_user.cards.order(updated_at: :asc).last.hp < 1 %>
+    <div class="battleLink" style="color: gold;">
+        Gameover
+    </div>
+<% else %>
+    <div class="battleLink">
+        <%= link_to 'Battle', user_attack_path, method: :post %>
+    </div>
+<% end %>
 
 <% if flash[:notice] %>
   <div class="toast toast-demo fade show battleLinkResultMargin myFlashNotice" role="alert" aria-live="assertive" aria-atomic="true">
@@ -46,7 +59,9 @@
         <div class="notice"><%= flash[:notice].html_safe %></div>
         <div class="mt-2 pt-2">
             <%= link_to 'Back', challenge_path, class: "btn btn-primary btn-sm backLinkButton backLinkButtonMargin" %>
-            <%= link_to 'Full Potion', heal_path, method: :post, class: "btn btn-primary btn-sm backLinkButton" %>
+            <% if @gym_leader.cards.first.hp < 1 || current_user.cards.order(updated_at: :asc).last.hp < 1 %>
+                <%= link_to 'Full Potion', heal_path, method: :post, class: "btn btn-primary btn-sm backLinkButton" %>
+            <% end %>
         </div>
     </div>
   </div>
@@ -70,7 +85,7 @@
         <br>
         <div class="progress">
             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                ability: <%= @gym_leader.cards.first.ability[0] %>
+                ability: <%= @gym_leader.cards.first.ability[rand(0..@gym_leader.cards.first.ability.length)-1] %>
             </div>
         </div>
         <br>

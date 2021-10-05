@@ -1,13 +1,4 @@
-class HomeController < ApplicationController
-  def index
-    @users = User.all
-    @gym_leader = GymLeader.all
-  end
 
-  def battle
-    @gym_leader = GymLeader.find(params[:id])
-  end
-  
   def user_attack
     @user = current_user
     @gym_leader = GymLeader.find(params[:id])
@@ -23,10 +14,6 @@ class HomeController < ApplicationController
         # hp: @gym_leader.cards.first.hp,
         # damage: @user.cards.order(updated_at: :asc).last.attack
       )
-
-      copy_card = Card.find_by(name: @gym_leader.cards.first.name)
-
-
     
       # STEP 3 - minus hp with attack then update
       @new_hp_gym_leader = @gym_leader.cards.first.hp - @user.cards.order(updated_at: :asc).last.attack
@@ -34,22 +21,22 @@ class HomeController < ApplicationController
     
       # STEP 4 - declare winner
       if @gym_leader.cards.first.hp < 1
+        # STEP 4.1a - flash win message
+        flash[:notice] = "You won! You have defeated #{@gym_leader.name}'s #{@gym_leader.cards.first.name}!"
         
-        # STEP 4.1a - aquire gym leaders's card if player wins
+        # STEP 4.1b - aquire gym leaders's card if player wins
         @user.cards.create(
-          user_id: @user.id, 
-          name: copy_card.name, 
-          pokemon_type: copy_card.pokemon_type, 
-          ability: copy_card.ability,
-          hp: copy_card.hp,
-          initial_hp: copy_card.initial_hp,
-          attack: copy_card.attack, 
-          img_url: copy_card.img_url,
-          move: copy_card.move,
-          updated_at: 10.minutes.ago,
+          user_id: @user.id,
+          name: @gym_leader.cards.first.name,
+          pokemon_type: @gym_leader.cards.first.pokemon_type,
+          ability: @gym_leader.cards.first.ability,
+          hp: @gym_leader.cards.first.initial_hp,
+          initial_hp: @gym_leader.cards.first.initial_hp,
+          attack: @gym_leader.cards.first.attack,
+          img_url: @gym_leader.cards.first.img_url
         )
     
-        # STEP 4.1b - adjust winrate
+        # STEP 4.1c - adjust winrate
         @new_win_count = @user.win_count + 1
         @new_battle_count = @user.battle_count + 1
         
@@ -59,9 +46,6 @@ class HomeController < ApplicationController
         @new_winrate = (100 * @user.win_count) / @user.battle_count
         @user.update(winrate: @new_winrate)
     
-        # STEP 4.1c - flash win message
-        flash[:notice] = "You won! You have defeated #{@gym_leader.name}'s #{@gym_leader.cards.first.name}!<br>Your pokemon #{@user.cards.order(updated_at: :asc).last.name} is getting stronger!"
-
         # STEP 4.1d - redirect to same page
         redirect_to battle_path(params[:id])
       else
@@ -87,6 +71,7 @@ class HomeController < ApplicationController
       @user.cards.order(updated_at: :asc).last.update(hp: @new_hp_player)
     
       if @user.cards.order(updated_at: :asc).last.hp < 1
+        flash[:notice] = "You lost! You have been defeated by #{@gym_leader.name}'s #{@gym_leader.cards.first.name}!"
         
         @new_battle_count = @user.battle_count + 1
     
@@ -95,8 +80,6 @@ class HomeController < ApplicationController
         @new_winrate = (100 * @user.win_count) / @user.battle_count
         @user.update(winrate: @new_winrate)
     
-        flash[:notice] = "You lost! You have been defeated by #{@gym_leader.name}'s #{@gym_leader.cards.first.name}!"
-
         redirect_to battle_path(params[:id])
       else
           flash[:notice] = "Direct hit! #{@user.cards.order(updated_at: :asc).last.name}'s' HP fell to #{@user.cards.order(updated_at: :asc).last.hp}
@@ -105,22 +88,14 @@ class HomeController < ApplicationController
           redirect_to battle_path(params[:id])
       end
     end
-  end
-      
-  def heal
-    @user = current_user
-    @gym_leader = GymLeader.find(params[:id])
-
-    new_hp =  @user.cards.order(updated_at: :asc).last.initial_hp + 10
-    new_attack = @user.cards.order(updated_at: :asc).last.attack + 10
-
-    @user.cards.order(updated_at: :asc).last.update(hp: new_hp, initial_hp: new_hp, attack: new_attack)
-
-    @gym_leader.cards.first.update(hp: @gym_leader.cards.first.initial_hp)
     
-    redirect_to battle_path(params[:id])
+    def heal
+      @user = current_user
+      @gym_leader = GymLeader.find(params[:id])
+      
+      @user.cards.order(updated_at: :asc).last.update(hp: @user.cards.order(updated_at: :asc).last.initial_hp)
+      @gym_leader.cards.first.update(hp: @gym_leader.cards.first.initial_hp)
+      
+      redirect_to battle_path(params[:id])
+    end
   end
-
-  def hello 
-  end
-end
